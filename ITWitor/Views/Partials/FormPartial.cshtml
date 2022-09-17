@@ -1,0 +1,27 @@
+﻿@model Form?
+<form method="post" action="@Url.ActionLink(Model?.Action, Model?.Controller)">
+    @foreach (DataFieldsGroup dataFieldGroup in Model?.DataFieldsGroups)
+    {
+        <div class="input-group mb-3">
+            <input type="@dataFieldGroup.DataFields[0].Type"
+               class="form-control"
+               placeholder="@dataFieldGroup.DataFields[0].Label"
+               aria-label="@dataFieldGroup.DataFields[0].Label"
+               name="@dataFieldGroup.DataFields[0].Name">
+            <input type="@dataFieldGroup.DataFields[0].Type"
+               class="form-control"
+               placeholder="@dataFieldGroup.DataFields[0].Label"
+               aria-label="@dataFieldGroup.DataFields[0].Label"
+               name="@dataFieldGroup.DataFields[0].Name">
+        </div>
+    }
+    @foreach (DataField field in Model?.DataFields)
+    {
+        <input type="@field.Type"
+           class="form-control"
+           placeholder="@field.Label"
+           aria-label="@field.Label"
+           name="@field.Name">
+    }
+    <input class="btn btn-primary" type="submit" value="@Model?.ConfirmText" />
+</form>

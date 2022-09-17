@@ -1,0 +1,19 @@
+﻿<div class="row row-cols-12">
+    <div class="col">
+        <iframe id="theme_builder" src="https://devexpress.github.io/ThemeBuilder/master"></iframe>
+    </div>
+</div>
+
+
+<script>
+    $(() => {
+        $('main > .container').removeClass('container').addClass('container-fluid');
+        $(window).on('resize', frameSizeAdaptation);
+        frameSizeAdaptation();
+        function frameSizeAdaptation() {
+            let target = document.getElementById('theme_builder');
+            target.width = target.parentElement.clientWidth;
+            target.height = visualViewport.height;
+        }
+    });
+</script>

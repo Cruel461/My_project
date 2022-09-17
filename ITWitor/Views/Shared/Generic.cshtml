@@ -1,0 +1,111 @@
+﻿@using Microsoft.AspNetCore.Html
+@model Page
+
+<div class="row row-cols-1">
+    <div class="col">
+        @{
+            ViewData["editingTrigger"] = HttpContextAccessor?.HttpContext?.Request.Query["editing"].FirstOrDefault() != null && (User.IsInRole("admin") || User.IsInRole("manager")) ? true : false;
+
+            foreach (ContentBlock contentBlock in Model.ContentBlocks.OrderBy(c => c.QueueIndex))
+            {
+                string? partialName = string.Empty;
+                @switch (contentBlock.BlockType?.ContentBlockType)
+                {
+                    case ContentBlockType.HtmlEditor:
+                        partialName = $"/Views/Partials/{contentBlock.BlockType.ContentBlockType}.cshtml";
+                        break;
+                    default:
+                        break;
+                }
+                {
+                    <div>
+                        <div class="content-block-control"> </div>
+                        @{
+                            await Html.RenderPartialAsync(partialName, contentBlock, ViewData);
+                        }
+                    </div>
+                }
+            }
+            if ((bool)ViewData["editingTrigger"]!)
+            {
+                <div class="new-content-block col my-2"></div>
+
+                <div id="creat_block_modal"></div>
+            }
+        }
+    </div>
+</div>
+
+<script>
+    $(function() {
+        var blockTypes = @(new HtmlString(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.BlockTypes)));
+        var selectBoxInstance;
+        var modalWrapper = $('#creat_block_modal');
+        console.log(blockTypes);
+
+        $('.new-content-block').html('<i class="fa fa-plus fa-3x" aria-hidden="true"></i>');
+
+        if (this.location.href.toLowerCase().includes('?editing=true')) {
+            modalWrapper.dxPopup({
+                showTitle: true,
+                title: "Тип блока",
+                showCloseButton: true,
+                height: "auto",
+                width: "300px",
+                container: '.dx-viewport',
+                position: {
+                    at: 'center',
+                    my: 'center',
+                },
+                toolbarItems: [
+                    {
+                        widget: 'dxButton',
+                        toolbar: 'bottom',
+                        location: 'before',
+                        options: {
+                            text: 'Закрыть',
+                            type: 'normal',
+                            onClick() {
+                                modalWrapper.dxPopup('hide');
+                            },
+                        },
+                    },
+                    {
+                        widget: 'dxButton',
+                        toolbar: 'bottom',
+                        location: 'after',
+                        options: {
+                            type: 'success',
+                            text: 'Создать',
+                            onClick() {
+                                let $form = this.element().closest('.dx-popup-wrapper').find('form');
+                                $form.submit();
+                            },
+                        },
+                    }
+                ],
+                contentTemplate: "<form method='POST' action='/Admin/CreateContentBlock'><input name='pageId' type='hidden' value='@Model.Id'/><input name='contentBlockType' type='hidden' value=''/><div id='selectBox'></div></form>",
+                onContentReady() {
+                    selectBoxInstance = $("#selectBox").dxSelectBox({
+                        items: blockTypes,
+                        onValueChanged: function(e) {
+                            let $form = this.element().closest('.dx-popup-wrapper').find('form');
+                            let $inputContentBlockType = $form.find('input[name="contentBlockType"]');
+                            $inputContentBlockType.val(e.value);
+                        },
+                    }).dxSelectBox('instance');
+
+                }
+            });
+
+            $('.new-content-block').dxButton({
+                type: "normal",
+                height: "auto",
+                hint: "Добавить блок",
+                onClick() {
+                    modalWrapper.dxPopup('show');
+                }
+            });
+        }
+    });
+</script>

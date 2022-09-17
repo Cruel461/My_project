@@ -1,0 +1,16 @@
+.favicon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .favicon-wrapper > * {
+    margin-left: 0.45rem;
+    margin-right: 0.45rem;
+  }
+
+
+  .favicon-wrapper img {
+    height: 50px;
+    object-fit: contain;
+  }

@@ -1,0 +1,9 @@
+﻿@using ITWitor
+@using ITWitor.Models
+@using Microsoft.AspNetCore.Identity
+@using DevExtreme.AspNet.Data
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor

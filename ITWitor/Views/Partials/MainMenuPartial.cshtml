@@ -1,0 +1,68 @@
+﻿@model List<Page>
+
+<div id="top_menu" style="width: 100%;display: flex;flex-direction: row;justify-content: center;">
+    @if (Model != null)
+    {
+        foreach (Page p in Model)
+        {
+            <a id="page_@p.Id" href="@p.LocalPath" class="mx-1">@p.Title</a>
+        }
+    }
+    <div id="context-menu"></div>
+</div>
+
+<script>
+    $(() => {
+        const contextMenuItems = [
+            {
+                text: 'Переместить',
+                items: [
+                    { text: 'левее...', command: "down" },
+                    { text: 'правее..', command: "up" },
+                    { text: 'в раздел...', command: "toPage" }
+                ],
+            },
+            { text: 'Добавить страницу в раздел', command: "newPage" },
+            { text: 'Удалить раздел', command: "removePage" },
+        ];
+        var activeElement;
+        $('#context-menu').dxContextMenu({
+            dataSource: contextMenuItems,
+            width: 200,
+            target: '#top_menu a',
+            onShowing(e) {
+                activeElement = e.jQEvent.currentTarget;
+                console.log(activeElement);
+            },
+            onHidden(e) {
+                activeElement = null;
+            },
+            onItemClick(e) {
+                if (!e.itemData.items) {
+                    if (activeElement instanceof HTMLAnchorElement) {
+                        switch (e.itemData.command) {
+                            case "down":
+                                break;
+                            case "up":
+                                break;
+                            case "toPage":
+                                break;
+                            case "newPage":
+                                break;
+                            case "removePage":
+                                if (confirm(`Удалить страницу ${activeElement.href}?`)) {
+                                    sendAjaxForm({ id: activeElement.id.replace('page_', '') }, '/Admin/RemovePage', (response) => {
+                                        if (response.Success) {
+                                            location.href = response.Url;
+                                        }
+                                    }, true);
+                                }
+                                break;
+                        };
+                    }
+                }
+
+            },
+        });
+    });
+</script>

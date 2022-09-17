@@ -1,0 +1,73 @@
+﻿@model Organization
+<div class="row row-cols-12">
+    <div class="col">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+        <p style="display:none">@ViewData["Description"]</p>
+    </div>
+</div>
+<div class="row row-cols-1 row-cols-xl-2">
+    <div class="col mx-auto">
+        <div class="favicon-wrapper">
+            Иконка:
+            <img src="/favicon.ico" width="30">
+            <form action="@Url.ActionLink("Favicon","Admin")" method="post" enctype="multipart/form-data">
+                <input type="submit" hidden />
+                <input type="file" name="uploads" onchange="(function(e) { formToAjax(e.parentElement, (r) => {  showMessage(r.Message);  },true); e.previousElementSibling.click();})(this)" />
+            </form>
+        </div>
+        <form id="@Model.GetType().Name" action="@Url.ActionLink("Organization","Admin")" method="post">
+            <hr />
+            <h3 class="text-center">Основное</h3>
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.ParentId)
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder="Полное наименование" })
+            </div>
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.ShortName, new { @class = "form-control", placeholder="Сокращенное наименование" })
+            </div>
+            <div class="labelholder my-1">
+                @Html.TextAreaFor(m => m.Description, new { @class="form-control", placeholder="Описание", rows=10  })
+            </div>
+            <hr />
+            <h3 class="text-center">Контакты</h3>
+            @Html.HiddenFor(m => m.Contacts.Id)
+
+            @Html.HiddenFor(m => m.Contacts.Address.Id)
+            @Html.HiddenFor(m => m.Contacts.Address.ParentId)
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.Contacts.MainPhone, new { @class = "form-control", placeholder="Телефон", type="tel" })
+            </div>
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.Contacts.Email, new { @class = "form-control", placeholder="Email", type="email" })
+            </div>
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.Contacts.Url, new { @class = "form-control", placeholder="Url" })
+            </div>
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.Contacts.Address.Text, new { @class = "form-control", placeholder="Адрес" })
+            </div>
+
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.INN, new { @class = "form-control", placeholder="ИНН" })
+            </div>
+
+            <div class="labelholder my-1">
+                @Html.TextBoxFor(m => m.BankAccount, new { @class = "form-control", placeholder="р/с" })
+            </div>
+
+            <div class="labelholder my-1">
+                @Html.TextAreaFor(m => m.Bank, new { @class = "form-control", placeholder="Банк", rows=4 })
+            </div>
+
+            <div items='@Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Files)' class="my-1 itw-selectbox" property="LogoId" value="@Model?.LogoId" label="Логотип"></div>
+
+            <div class="dx-button" action="submit" text="Сохранить"></div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+
+</script>

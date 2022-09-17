@@ -1,0 +1,46 @@
+﻿@if (User.IsInRole("admin") || User.IsInRole("manager"))
+{
+    <div class="sidebar smallSidebar">
+        <input class="menuTogglerInput_mobile" id="menuTogglerInputId_mobile" type="checkbox">
+        <div class="menuCont">
+            <input class="menuTogglerInput" type="checkbox" checked="true">
+            <div class="menuContInner">
+                <ul class="nav nav-list nav-sideMenu">
+                    <li class="menu-toggler">
+                        <a> <i class="fa fa-arrow-left"></i> </a>
+                    </li>
+                    <li>
+                        <a class="nav-link d-flex justify-content-start align-items-center" data-bs-toggle="tooltip" title="Данные об организации" asp-area="" asp-controller="Admin" asp-action="Organization">
+                            <i class="fas fa-info mx-1"  style="margin-left: 0.65rem !important;"></i>
+                            <span>Организация</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link d-flex justify-content-start align-items-center" data-bs-toggle="tooltip" title="Настройки" asp-area="" asp-controller="Admin" asp-action="PortalSettings">
+                            <i class="fa fa-gear mx-1" style="margin-left: 0.35rem !important;"></i>
+                            <span>Настройки</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link d-flex justify-content-start align-items-center disabled" data-bs-toggle="tooltip" title="Каталог товаров" asp-area="" asp-controller="Admin" asp-action="Catalog">
+                            <i class="fa fa-archive mx-1" style="margin-left: 0.35rem !important;"></i>
+                            <span>Товары</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link d-flex justify-content-start align-items-center disabled" data-bs-toggle="tooltip" title="Торговые предложения" asp-area="" asp-controller="Admin" asp-action="Offers">
+                            <i class="fa fa-warehouse mx-1"></i>
+                            <span>Предложения</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link d-flex justify-content-start align-items-center" href="@Url.Action("Files","Admin", new{ p=1, c=40,od="descend" })" target="_self">
+                            <i class="fa fa-file mx-1" style="margin-left: 0.45rem !important;"></i>
+                            <span>Файлы</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,272 @@
+﻿@using ITWitor.Controllers
+@using Microsoft.AspNetCore.Html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta property="og:url" content='https://@this.Context.Request.Host'>
+    <meta property="og:image" content='@ViewData["Image"]'>
+    <meta property="og:description" content='@ViewData["Description"]' />
+    <meta name="description" content='@ViewData["Description"]'>
+    <title>@ViewData["Title"] | @ViewBag.Settings?.Organization?.ShortName</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Liga.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/labelholder.css" />
+    <link rel="stylesheet" href="~/lib/fancybox/css/jquery.fancybox.css" />
+
+    <script src="https://kit.fontawesome.com/49a24c4a0e.js" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/exstensions.js" asp-append-version="true"></script>
+    @if (User.IsInRole("admin") || User.IsInRole("manager"))
+    {
+        <link rel="stylesheet" href="~/css/admin.css" />
+        <link rel="stylesheet" href="~/css/sidebar.css" />
+        <link rel="stylesheet" href="~/css/itw.css" asp-append-version="true" />
+    }
+
+    <!-- DevExtreme -->
+    <link href="~/lib/devextreme/css/dx.softblue.css" rel="stylesheet">
+    <script src="~/lib/devextreme/js/dx.utils.js"></script>
+    <script src="~/lib/devextreme/js/dx-quill.min.js"></script>
+    <script src="~/lib/devextreme/js/turndown.js"></script>
+    <script src="~/lib/devextreme/js/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/event.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/supplemental.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/message.min.js" type="text/javascript"></script>
+    <script src="~/lib/devextreme/js/dx.all.js"></script>
+    <script src="~/lib/devextreme/js/dx.aspnet.data.js"></script>
+    <script src="~/lib/devextreme/js/dx.messages.ru.js"></script>
+    <script src="https://unpkg.com/devextreme-cldr-data@1.0.3/supplemental.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/devextreme-cldr-data@1.0.3/ru.js" type="text/javascript"></script>
+    <script src="https://yookassa.ru/payouts-data/2.0.1/widget.js"></script>
+    <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
+    <!--  -->
+
+</head>
+<body class="loading dx-viewport">
+    <script>
+        Globalize.locale('ru');
+    </script>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom box-shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="@ViewBag.Settings?.Organization?.Logo?.Path" alt="Логотип" height="50">
+                    <div class="loader spinner-border text-danger spinner-border-md mb-2" role="status" style="width: 1.5rem;height: 1.5rem;border-width: 0.1em">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-between">
+                    @{
+                        await Html.RenderPartialAsync("/Views/Partials/MainMenuPartial.cshtml", (List<Page>)ViewBag.Pages);
+                    }
+                    <div class="d-flex justify-content-center">
+                        @{
+                            await Html.RenderPartialAsync("/Views/Partials/AdminPanel.cshtml");
+                            await Html.RenderPartialAsync("/Views/Partials/UserPartial.cshtml");
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    @* <div id="toolbar"></div>*@
+    <div id="drawer">
+        <div id="content" class="dx-theme-background-color">
+            <main role="main" class="pb-3">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+    @*   <div class="options">
+    <div class="caption">Options</div>
+    <div class="options-container">
+    <div class="option">
+    <label>Opened state mode</label>
+    <div id="opened-state-mode"></div>
+    </div>
+    <div class="option">
+    <label>Position</label>
+    <div id="position-mode"></div>
+    </div>
+    <div id="reveal-mode-option" class="option">
+    <label>Reveal mode</label>
+    <div id="reveal-mode"></div>
+    </div>
+    </div>
+    </div>*@
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row row-cols-1">
+                <div class="col">
+                    @{
+                        var org = string.Empty;
+                        try
+                        {
+                            org = ViewBag.Settings.Organization != null && !String.IsNullOrEmpty(ViewBag.Settings.Organization.ShortName) ? ViewBag.Settings.Organization.ShortName : string.Empty;
+                        }
+                        catch { }
+                    }
+                    <span>&copy; 2022 - @org</span>
+                    <br />
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy" class="dark">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="messages-wrapper">
+        @foreach (Message item in ViewBag.Messages)
+        {
+            <script>
+                $(function() {
+
+                    DevExpress.ui.notify({
+                        message: `@(new HtmlString(item.Text))`,
+                        type: '@item.MessageType.ToString().ToLower()',
+                        displayTime: 2500,
+                        animation: {
+                            show: {
+                                type: 'fade', duration: 400, from: 0, to: 1,
+                            },
+                            hide: { type: 'fade', duration: 40, to: 0 },
+                        },
+                        width: 300,
+                        shading: false,
+                        position: 'top center',
+                    });
+                });
+
+
+            </script>
+        }
+    </div>
+    <div class="side-toggler" style="left: -3.8em;"><button class="btn btn-primary" type="button">КАТАЛОГ</button></div>
+    @{
+        await Html.RenderPartialAsync("/Views/Partials/AdminPartial.cshtml");
+        await Html.RenderPartialAsync("/Views/Modals/LoginModal.cshtml");
+    }
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+    <script src="~/js/labelholder.js" asp-append-version="true"></script>
+    <script src="~/lib/fancybox/js/jquery.fancybox.js" asp-append-version="true"></script>
+    <script src="~/lib/signalr/dist/browser/signalr.min.js" asp-append-version="true"></script>
+    <script src="~/js/chat.js" asp-append-version="true"></script>
+    @if (User.IsInRole("admin") || User.IsInRole("manager"))
+    {
+        <script src="~/js/files.js" asp-append-version="true"></script>
+        <script src="~/js/admin.js" asp-append-version="true"></script>
+        <script src="~/js/sidebar.js" asp-append-version="true"></script>
+    }
+    <script src="~/lib/devextreme/js/dx.messages.ru.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(() => {
+            const drawer = $('#drawer').dxDrawer({
+                opened: false,
+                //height: 400,
+                closeOnOutsideClick: true,
+                template() {
+                    $('.side-toggler button').on('click', function() {
+                        drawer.toggle();
+                    });
+
+                    const $list = $('<div>').width(200).addClass('panel-list');
+                    //$('.side-toggler button').dxButton({
+                    //    onClick(evt) {
+                    //        console.log(this, evt, drawer);
+                    //        drawer.instance().toggle();
+                    //        //setTimeout(() => { drawer.hide(); }, 1500);
+                    //    }
+                    //});
+
+                    //$('#toolbar').dxToolbar({
+                    //    items: [{
+                    //        widget: 'dxButton',
+                    //        location: 'before',
+                    //        options: {
+                    //            icon: 'menu',
+                    //            onClick() {
+                    //                drawer.toggle();
+                    //            },
+                    //        },
+                    //    }],
+                    //});
+
+                    return $list.dxList({
+                        dataSource: navigation,
+                        hoverStateEnabled: false,
+                        focusStateEnabled: false,
+                        activeStateEnabled: false,
+                        elementAttr: { class: 'dx-theme-accent-as-background-color' },
+                    });
+                },
+
+            }).dxDrawer('instance');
+
+            //$('#reveal-mode').dxRadioGroup({
+            //    items: ['slide', 'expand'],
+            //    layout: 'horizontal',
+            //    value: 'slide',
+            //    onValueChanged(e) {
+            //        drawer.option('revealMode', e.value);
+            //    },
+            //});
+
+            //$('#opened-state-mode').dxRadioGroup({
+            //    items: ['push', 'shrink', 'overlap'],
+            //    layout: 'horizontal',
+            //    value: 'shrink',
+            //    onValueChanged(e) {
+            //        drawer.option('openedStateMode', e.value);
+            //        $('#reveal-mode-option').css('visibility', e.value !== 'push' ? 'visible' : 'hidden');
+            //    },
+            //});
+
+            //$('#position-mode').dxRadioGroup({
+            //    items: ['left', 'right'],
+            //    layout: 'horizontal',
+            //    value: 'left',
+            //    onValueChanged(e) {
+            //        drawer.option('position', e.value);
+            //    },
+            //});
+
+        });
+        const navigation = [
+
+            { id: 1, text: 'Категория 1' },
+            { id: 2, text: 'Категория 2' },
+            { id: 3, text: 'Категория 3' },
+            { id: 4, text: 'Категория 4' },
+            { id: 5, text: 'Категория 5' },
+
+            //{ id: 1, text: 'Products', icon: 'product' },
+            //{ id: 2, text: 'Sales', icon: 'money' },
+            //{ id: 3, text: 'Customers', icon: 'group' },
+            //{ id: 4, text: 'Employees', icon: 'card' },
+            //{ id: 5, text: 'Reports', icon: 'chart' },
+        ];
+
+
+                                                                                                                                                                                                                                                        //$(document).ready(() => {
+                                                                                                                                                                                                                                                        //    $('.side-toggler button').on('click', function() {
+                                                                                                                                                                                                                                                        //        tempDrawer.toggle();
+                                                                                                                                                                                                                                                        //    });
+                                                                                                                                                                                                                                                        //})
+
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

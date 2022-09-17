@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "devextreme-quill": "^1.5.16"
+  }
+}

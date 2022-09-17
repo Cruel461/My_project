@@ -1,0 +1,2100 @@
+.sidebar .menuCont .menuContInner .menu-toggler {
+  text-align: right;
+  margin-left: auto;
+}
+
+.sidebar:not(.smallSidebar) .menuCont .menuContInner .menu-toggler {
+  margin-right: auto;
+  text-align: left;
+}
+
+.sidebar .menuCont .menuContInner .menu-toggler span {
+  font-size: 20px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+}
+
+.sidebar .menuCont .menu-toggler a {
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar .menuCont .menu-toggler:hover a {
+  background: transparent !important;
+}
+
+.sidebar .menuCont .menu-toggler span[class^="icon_"] {
+  margin-right: 0px;
+}
+
+.sidebar .menuCont .menuTogglerInput {
+  position: absolute;
+  z-index: 8;
+  /* right: 0px;*/
+  height: 30px;
+  width: 40px;
+  padding: 0px;
+  margin: 0px;
+  opacity: 0;
+  appearance: none;
+  cursor: pointer;
+}
+
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .nav-list span[class^="icon_"] {
+    display: inline-block;
+    padding-left: 0px;
+    width: 20px;
+  }
+
+.sidebar.smallSidebar {
+  width: 50px;
+  min-width: 50px;
+}
+
+  .sidebar.smallSidebar .menuCont {
+    max-width: 50px;
+  }
+
+
+.menuTogglerInput:checked ~ .menuContInner span {
+  display: none;
+  padding-left: 15px;
+}
+
+.sidebar:not(.smallSidebar) a {
+  padding-left: 0;
+}
+
+.sidebar .menuContInner {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.sidebar .menuTogglerInput_mobile {
+  display: none;
+  visibility: hidden;
+}
+
+.sidebar.smallSidebar {
+  width: 50px;
+  min-width: 50px;
+}
+
+.sidebar {
+  vertical-align: top;
+  width: 205px;
+  min-width: 205px;
+}
+
+  .sidebar .nav-link.active {
+    background-color: rgba(51, 51, 51, 0.46);
+  }
+
+    .sidebar .nav-link.active i {
+      color: #ffc107;
+    }
+
+  .sidebar:not(.smallSidebar) .menuTogglerInput {
+    left: 0px;
+    right: inherit;
+  }
+
+  .sidebar:not(.smallSidebar) .menuCont .menuContInner .menu-toggler {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+@media (min-width: 1025px) {
+  .sidebar {
+    vertical-align: top;
+    width: 205px;
+    min-width: 205px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar.smallSidebar {
+    width: 50px;
+    min-width: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar.smallSidebar .menuCont {
+    max-width: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar + .content {
+    max-width: calc(100% - 205px);
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar.smallSidebar + .content {
+    max-width: calc(100% - 50px);
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobileMenuBlock > * {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar .menuTogglerInput:checked ~ .menuContInner {
+    width: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner {
+    width: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .menu-toggler {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuTogglerInput:checked ~ .menuContInner span {
+    display: none;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .nav-list span[class^="icon_"], .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner span[class^="icon_"] {
+    margin-right: 0px;
+  }
+}
+
+/*.sidebar .menuCont .menuTogglerInput:hover ~ .menuContInner > .nav-list > li.menu-toggler > a > i {
+  color: rgb(255, 255, 255);
+}
+*/
+
+@media (min-width: 1025px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner > .nav-list > li.menu-toggler.hover > a, .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner > .nav-list > li.menu-toggler:hover > a {
+    width: 18px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner > .nav-list > li.active.hover a, .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner > .nav-list > li.active:hover a {
+    background-color: rgb(39, 169, 227);
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 0px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sidebar__balance, .sidebar__loginBalance {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sidebar .menuTogglerInput_mobile:checked ~ .menuCont {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .nav-list li.hover span[class^="icon_"], .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .nav-list li:hover span[class^="icon_"], .sidebar .menuCont .menuTogglerInput:checked ~ .menuContInner .nav-list span[class^="icon_"] {
+    display: inline-block;
+    padding-left: 0px;
+    width: 20px;
+  }
+}
+
+/*.menuContInner {
+    height:fit-content;
+    background: rgb(57, 75, 89);
+    border: 1px solid rgb(48, 64, 77);
+    overflow-y: auto;
+    background-color: #001132;
+    border-top-left-radius: 10px !important;
+    box-shadow: 0 10px 20px 0 rgb(0 0 0 / 70%);
+}
+*/
+.menuCont {
+  top: 35%;
+  overflow-x: hidden;
+  right: -0.95em;
+  width: auto;
+  margin: 0px;
+  position: fixed;
+  z-index: 100;
+  max-width: 130px;
+  border: 1px solid rgb(48, 64, 77);
+  overflow-y: auto;
+  border-top-left-radius: 10px !important;
+  box-shadow: 3px 0px 7px 3px rgb(0 0 0 / 70%);
+}
+
+.cp2-top-banner ~ .wrapper .menuCont {
+  top: 96px;
+}
+
+.menuCont .nav.nav-list .nav.nav-list {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  margin-left: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 1px -10px 4px;
+}
+
+.menuCont .nav.nav-list li.active .nav.nav-list li > a {
+  background-color: rgb(39, 169, 227);
+}
+
+.menuCont .nav.nav-list .nav.nav-list li > a {
+  background-color: rgb(232, 232, 232);
+  padding-left: 11px !important;
+}
+
+@media (min-width: 1025px) {
+  .menuCont {
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: rgb(85, 107, 123);
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 199, 206);
+    box-shadow: rgb(85, 107, 123) 0px 0px 0px 1px inset;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(240deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(0deg, rgb(2, 20, 26) 30%, transparent 31%) rgb(246, 248, 244);
+    height: 0px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-button:vertical:end:increment {
+    background: linear-gradient(300deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(60deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(rgb(2, 20, 26) 30%, transparent 31%) rgb(246, 248, 244);
+    height: 0px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-button:horizontal:start:decrement {
+    background: linear-gradient(30deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(150deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(270deg, rgb(2, 20, 26) 30%, transparent 31%) rgb(246, 248, 244);
+  }
+}
+
+@media (min-width: 1025px) {
+  .menuCont::-webkit-scrollbar-button:horizontal:end:increment {
+    background: linear-gradient(210deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(330deg, rgb(2, 20, 26) 40%, transparent 41%), linear-gradient(90deg, rgb(2, 20, 26) 30%, transparent 31%) rgb(246, 248, 244);
+  }
+}
+
+.cpTitleInfoBalance {
+  text-align: left;
+  color: rgb(138, 155, 168);
+  margin-right: 10px;
+}
+
+.cp2-button-group {
+  display: inline-flex;
+}
+
+  .cp2-button-group > .cp2-button + .cp2-button {
+    margin: 0px 0px 0px 10px;
+  }
+
+.cp2-button-group_vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+  .cp2-button-group_vertical > .cp2-button + .cp2-button {
+    margin: 10px 0px 0px;
+  }
+
+.cp2-button {
+  border: 0px;
+  position: relative;
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 15px;
+  align-items: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+  .cp2-button:not([class*="cp2-intent"]) {
+    background-color: rgb(245, 248, 250);
+    box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset;
+    color: rgb(24, 32, 38);
+  }
+
+    .cp2-button:not([class*="cp2-intent"]):focus, .cp2-button:not([class*="cp2-intent"]):hover {
+      background-color: rgb(225, 232, 237);
+      color: rgb(24, 32, 38);
+    }
+
+    .cp2-button:not([class*="cp2-intent"]):active {
+      background-color: rgb(216, 225, 232);
+    }
+
+  .cp2-button:focus, .cp2-button:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+    .cp2-button:focus .cp2-button-tooltip, .cp2-button:hover .cp2-button-tooltip {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+  .cp2-button.cp2-intent-primary {
+    background-color: rgb(19, 124, 189);
+    color: rgb(255, 255, 255);
+  }
+
+    .cp2-button.cp2-intent-primary:active, .cp2-button.cp2-intent-primary:focus, .cp2-button.cp2-intent-primary:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .cp2-button.cp2-intent-primary:hover {
+      background-color: rgb(16, 107, 163);
+    }
+
+    .cp2-button.cp2-intent-primary:active {
+      background-color: rgb(14, 90, 138);
+    }
+
+  .cp2-button.cp2-intent-success {
+    background-color: rgb(15, 153, 96);
+    color: rgb(255, 255, 255);
+  }
+
+    .cp2-button.cp2-intent-success:active, .cp2-button.cp2-intent-success:focus, .cp2-button.cp2-intent-success:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .cp2-button.cp2-intent-success:hover {
+      background-color: rgb(13, 128, 80);
+    }
+
+    .cp2-button.cp2-intent-success:active {
+      background-color: rgb(10, 102, 64);
+    }
+
+  .cp2-button.cp2-intent-warning {
+    background-color: rgb(217, 130, 43);
+    color: rgb(255, 255, 255);
+  }
+
+    .cp2-button.cp2-intent-warning:active, .cp2-button.cp2-intent-warning:focus, .cp2-button.cp2-intent-warning:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .cp2-button.cp2-intent-warning:hover {
+      background-color: rgb(191, 115, 38);
+    }
+
+    .cp2-button.cp2-intent-warning:active {
+      background-color: rgb(166, 99, 33);
+    }
+
+  .cp2-button.cp2-intent-danger {
+    background-color: rgb(219, 55, 55);
+    color: rgb(255, 255, 255);
+  }
+
+    .cp2-button.cp2-intent-danger:active, .cp2-button.cp2-intent-danger:focus, .cp2-button.cp2-intent-danger:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .cp2-button.cp2-intent-danger:hover {
+      background-color: rgb(194, 48, 48);
+    }
+
+    .cp2-button.cp2-intent-danger:active {
+      background-color: rgb(168, 42, 42);
+    }
+
+  .cp2-button.cp2-fill {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+    .cp2-button.cp2-fill .cp2-button-body {
+      flex-grow: 1;
+    }
+
+.cp2-button-addon {
+  max-height: 31px;
+  box-sizing: border-box;
+  padding: 0px 7px 0px 0px;
+  line-height: 1;
+}
+
+  .cp2-button-addon > svg {
+    max-height: 16px;
+    min-width: 22px;
+    max-width: 100%;
+  }
+
+  .cp2-button-addon > [class*="icon"] {
+    font-size: 16px;
+  }
+
+  .cp2-button-addon.cp2-intent-primary {
+    color: rgb(43, 149, 214);
+  }
+
+  .cp2-button-addon.cp2-intent-success {
+    color: rgb(21, 179, 113);
+  }
+
+  .cp2-button-addon.cp2-intent-warning {
+    color: rgb(242, 157, 73);
+  }
+
+  .cp2-button-addon.cp2-intent-danger {
+    color: rgb(245, 86, 86);
+  }
+
+.cp2-button-tooltip {
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 101;
+  margin-top: 75px;
+  top: calc(50% - 29px);
+  left: 0px;
+  padding: 16px;
+  background: rgb(57, 75, 89);
+  color: rgb(245, 248, 250);
+  box-shadow: rgba(16, 22, 26, 0.1) 0px 0px 0px 1px, rgba(16, 22, 26, 0.2) 0px 2px 4px, rgba(16, 22, 26, 0.2) 0px 8px 24px;
+  border-radius: 3px;
+  transition: transform 0.2s ease-out 0s, opacity 0.2s ease-out 0s;
+  transform: translateY(-10px);
+}
+
+  .cp2-button-tooltip::before {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    content: "";
+    top: -12px;
+    margin-left: -10px;
+    border-color: transparent transparent rgb(57, 75, 89);
+    border-style: solid;
+    border-width: 0px 12px 12px;
+  }
+
+.cp2-top-banner.cp2-intent-primary::before {
+  background-color: rgba(19, 124, 189, 0.15);
+}
+
+.icon_tasks::before {
+  content: "î¤“";
+}
+
+.cp2-top-banner.cp2-intent-success::before {
+  background-color: rgba(15, 153, 96, 0.15);
+}
+
+.fr-icon2-user::before {
+  content: "î …";
+}
+
+.fr-icon2-user-male::before {
+  content: "î †";
+}
+
+.fr-icon2-user-female::before {
+  content: "î ‡";
+}
+
+.fr-icon2-users::before {
+  content: "î ˆ";
+}
+
+.fr-icon2-user-1::before {
+  content: "î¥ ";
+}
+
+.fr-icon2-user-plus::before {
+  content: "î¥¡";
+}
+
+.fr-icon2-user-times::before {
+  content: "î¥¢";
+}
+
+.fr-icon2-users-1::before {
+  content: "î¥£";
+}
+
+.fr-icon2-user-secret::before {
+  content: "î¥¤";
+}
+
+.bp3-navbar {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(16, 22, 26, 0.1) 0px 0px 0px 1px, rgba(16, 22, 26, 0) 0px 0px 0px, rgba(16, 22, 26, 0.2) 0px 1px 1px;
+  height: 50px;
+  padding: 0px 15px;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+  .bp3-navbar.bp3-fixed-top {
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+  }
+
+.bp3-navbar-heading {
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.bp3-navbar-group {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 50px;
+}
+
+  .bp3-navbar-group.bp3-align-left {
+    float: left;
+  }
+
+  .bp3-navbar-group.bp3-align-right {
+    float: right;
+  }
+
+.bp3-navbar-divider {
+  border-left: 1px solid rgba(16, 22, 26, 0.15);
+  height: 20px;
+  margin: 0px 10px;
+}
+
+.bp3-datepicker-navbar {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  height: 30px;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+  .bp3-datepicker-navbar > .DayPicker-NavButton--prev {
+    margin-right: auto;
+  }
+
+  .bp3-datepicker-navbar > .DayPicker-NavButton--next {
+    margin-left: auto;
+  }
+
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+  border-top: 0px;
+  border-bottom: 4px solid rgb(0, 0, 0);
+  content: "";
+}
+
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 1px;
+}
+
+.sidebar .nav {
+  margin-left: 0px;
+  list-style: none;
+}
+
+  .sidebar .nav > li > a {
+    display: block;
+  }
+
+/*.sidebar:not(.smallSidebar) .nav > li > a:hover {
+  text-decoration: none;
+  background-color: rgb(232, 232, 232);
+}*/
+
+.nav-sideMenu {
+  padding-left: 2px;
+}
+
+.nav > li > a > img {
+  max-width: none;
+}
+
+.nav > .pull-right {
+  float: right;
+}
+
+.nav-list {
+  /* padding-left: 12px;*/
+  margin-bottom: 0px;
+}
+
+  .nav-list > li {
+    width: 100%;
+  }
+
+.sidebar.smallSidebar .nav-list > li {
+  text-align: center;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus, .nav-list > .active > a > span > span {
+  background-color: rgb(39, 169, 227);
+  color: rgb(255, 255, 255) !important;
+}
+
+.nav .dropdown-toggle .caret {
+  margin-top: 6px;
+  border-top-color: rgb(0, 136, 204);
+  border-bottom-color: rgb(0, 136, 204);
+}
+
+.nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {
+  border-top-color: rgb(0, 85, 128);
+  border-bottom-color: rgb(0, 85, 128);
+}
+
+
+.nav .active .dropdown-toggle .caret {
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+}
+
+
+
+.nav > .dropdown.active > a:hover, .nav > .dropdown.active > a:focus {
+  cursor: pointer;
+}
+
+.nav-tabs .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover, .nav > li.dropdown.open.active > a:focus {
+  color: rgb(255, 255, 255);
+  background-color: rgb(153, 153, 153);
+  border-color: rgb(153, 153, 153);
+}
+
+.nav li.dropdown.open .caret, .nav li.dropdown.open.active .caret, .nav li.dropdown.open a:hover .caret, .nav li.dropdown.open a:focus .caret {
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.nav > .disabled > a {
+  color: rgb(153, 153, 153);
+}
+
+  .nav > .disabled > a:hover, .nav > .disabled > a:focus {
+    text-decoration: none;
+    cursor: default;
+    background-color: transparent;
+  }
+
+.fr-icon3-navigate_before::before {
+  content: "îˆ";
+}
+
+.fr-icon3-navigate_next::before {
+  content: "î‰";
+}
+
+.sidebar a {
+  font-size: 13px;
+  text-decoration: none;
+  padding: 5px 5px;
+}
+
+.sidebar a {
+  position: relative;
+  z-index: 5;
+  color: rgb(184, 199, 206);
+  text-decoration: none;
+}
+
+
+
+/*.sidebar:not(.smallSidebar) .nav.nav-list > li:not(.active) > a:hover {
+  background-color: rgb(92, 112, 128);
+}*/
+
+/* .sidebar:not(.smallSidebar) .nav.nav-list > li:not(.active) > a:hover,
+  .sidebar:not(.smallSidebar) .nav.nav-list > li:not(.active) > a:hover .fa {
+    color: rgb(255, 255, 255) !important;
+  }*/
+
+
+.nav-list span[class^="icon_"] {
+  display: inline-block;
+  width: 28px;
+  height: 18px;
+  line-height: 16px;
+  vertical-align: middle;
+  padding-left: 0px;
+  font-size: 18px;
+  color: rgb(184, 199, 206);
+}
+
+.nav-list > li.active > a {
+  background-color: rgb(39, 169, 227);
+  color: rgb(255, 255, 255) !important;
+}
+
+.nav-list li.active span[class^="icon_"] {
+  color: rgb(255, 255, 255);
+}
+
+.ui-tabs .ui-tabs-nav li a {
+  padding: 0.5em 0.3em;
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .mobileMenuBlock {
+    width: 58px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .Balance {
+    margin-right: 0px;
+    padding-right: 0px;
+    background: none;
+    border-left: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .loginBalance {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .Balance > *, .cpTitle .loginBalance > * {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .loginBalance {
+    vertical-align: middle;
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cpTitle .loginBalance .login {
+    color: transparent;
+    text-align: right;
+  }
+}
+
+@media (max-width: 1024px) {
+  label.menu-toggler_mobile {
+    padding: 10px 0px 10px 6px;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 20px !important;
+  }
+}
+
+.icon_menu::before {
+  content: "î¤Œ";
+}
+
+.bp3-button:not([class*="bp3-intent-"]).bp3-active, .bp3-button:not([class*="bp3-intent-"]):active {
+  background-color: rgb(216, 225, 232);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-button:not([class*="bp3-intent-"]).bp3-disabled.bp3-active, .bp3-button:not([class*="bp3-intent-"]).bp3-disabled.bp3-active:hover, .bp3-button:not([class*="bp3-intent-"]):disabled.bp3-active, .bp3-button:not([class*="bp3-intent-"]):disabled.bp3-active:hover {
+  background: rgba(206, 217, 224, 0.7);
+}
+
+.bp3-button.bp3-intent-primary.bp3-active, .bp3-button.bp3-intent-primary:active, .bp3-button.bp3-intent-primary:hover {
+  color: rgb(255, 255, 255);
+}
+
+.bp3-button.bp3-intent-primary.bp3-active, .bp3-button.bp3-intent-primary:active {
+  background-color: rgb(14, 90, 138);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-button.bp3-intent-success.bp3-active, .bp3-button.bp3-intent-success:active, .bp3-button.bp3-intent-success:hover {
+  color: rgb(255, 255, 255);
+}
+
+.bp3-button.bp3-intent-success.bp3-active, .bp3-button.bp3-intent-success:active {
+  background-color: rgb(10, 102, 64);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-button.bp3-intent-warning.bp3-active, .bp3-button.bp3-intent-warning:active, .bp3-button.bp3-intent-warning:hover {
+  color: rgb(255, 255, 255);
+}
+
+.bp3-button.bp3-intent-warning.bp3-active, .bp3-button.bp3-intent-warning:active {
+  background-color: rgb(166, 99, 33);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-button.bp3-intent-danger.bp3-active, .bp3-button.bp3-intent-danger:active, .bp3-button.bp3-intent-danger:hover {
+  color: rgb(255, 255, 255);
+}
+
+.bp3-button.bp3-intent-danger.bp3-active, .bp3-button.bp3-intent-danger:active {
+  background-color: rgb(168, 42, 42);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-button.bp3-minimal.bp3-active, .bp3-button.bp3-minimal:active {
+  background: rgba(115, 134, 148, 0.3);
+  box-shadow: none;
+  color: rgb(24, 32, 38);
+}
+
+.bp3-button.bp3-minimal.bp3-disabled.bp3-active, .bp3-button.bp3-minimal.bp3-disabled:hover.bp3-active, .bp3-button.bp3-minimal:disabled.bp3-active, .bp3-button.bp3-minimal:disabled:hover.bp3-active {
+  background: rgba(115, 134, 148, 0.3);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-primary.bp3-active, .bp3-button.bp3-minimal.bp3-intent-primary:active, .bp3-button.bp3-minimal.bp3-intent-primary:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-primary.bp3-active, .bp3-button.bp3-minimal.bp3-intent-primary:active {
+  background: rgba(19, 124, 189, 0.3);
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-primary.bp3-disabled.bp3-active, .bp3-button.bp3-minimal.bp3-intent-primary:disabled.bp3-active {
+  background: rgba(19, 124, 189, 0.3);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-success.bp3-active, .bp3-button.bp3-minimal.bp3-intent-success:active, .bp3-button.bp3-minimal.bp3-intent-success:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-success.bp3-active, .bp3-button.bp3-minimal.bp3-intent-success:active {
+  background: rgba(15, 153, 96, 0.3);
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-success.bp3-disabled.bp3-active, .bp3-button.bp3-minimal.bp3-intent-success:disabled.bp3-active {
+  background: rgba(15, 153, 96, 0.3);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-warning.bp3-active, .bp3-button.bp3-minimal.bp3-intent-warning:active, .bp3-button.bp3-minimal.bp3-intent-warning:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-warning.bp3-active, .bp3-button.bp3-minimal.bp3-intent-warning:active {
+  background: rgba(217, 130, 43, 0.3);
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-warning.bp3-disabled.bp3-active, .bp3-button.bp3-minimal.bp3-intent-warning:disabled.bp3-active {
+  background: rgba(217, 130, 43, 0.3);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-danger.bp3-active, .bp3-button.bp3-minimal.bp3-intent-danger:active, .bp3-button.bp3-minimal.bp3-intent-danger:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-danger.bp3-active, .bp3-button.bp3-minimal.bp3-intent-danger:active {
+  background: rgba(219, 55, 55, 0.3);
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button.bp3-minimal.bp3-intent-danger.bp3-disabled.bp3-active, .bp3-button.bp3-minimal.bp3-intent-danger:disabled.bp3-active {
+  background: rgba(219, 55, 55, 0.3);
+}
+
+.bp3-button.bp3-outlined.bp3-active, .bp3-button.bp3-outlined:active {
+  background: rgba(115, 134, 148, 0.3);
+  box-shadow: none;
+  color: rgb(24, 32, 38);
+}
+
+.bp3-button.bp3-outlined.bp3-disabled.bp3-active, .bp3-button.bp3-outlined.bp3-disabled:hover.bp3-active, .bp3-button.bp3-outlined:disabled.bp3-active, .bp3-button.bp3-outlined:disabled:hover.bp3-active {
+  background: rgba(115, 134, 148, 0.3);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-primary.bp3-active, .bp3-button.bp3-outlined.bp3-intent-primary:active, .bp3-button.bp3-outlined.bp3-intent-primary:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-primary.bp3-active, .bp3-button.bp3-outlined.bp3-intent-primary:active {
+  background: rgba(19, 124, 189, 0.3);
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-primary.bp3-disabled.bp3-active, .bp3-button.bp3-outlined.bp3-intent-primary:disabled.bp3-active {
+  background: rgba(19, 124, 189, 0.3);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-success.bp3-active, .bp3-button.bp3-outlined.bp3-intent-success:active, .bp3-button.bp3-outlined.bp3-intent-success:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-success.bp3-active, .bp3-button.bp3-outlined.bp3-intent-success:active {
+  background: rgba(15, 153, 96, 0.3);
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-success.bp3-disabled.bp3-active, .bp3-button.bp3-outlined.bp3-intent-success:disabled.bp3-active {
+  background: rgba(15, 153, 96, 0.3);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-warning.bp3-active, .bp3-button.bp3-outlined.bp3-intent-warning:active, .bp3-button.bp3-outlined.bp3-intent-warning:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-warning.bp3-active, .bp3-button.bp3-outlined.bp3-intent-warning:active {
+  background: rgba(217, 130, 43, 0.3);
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-warning.bp3-disabled.bp3-active, .bp3-button.bp3-outlined.bp3-intent-warning:disabled.bp3-active {
+  background: rgba(217, 130, 43, 0.3);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-danger.bp3-active, .bp3-button.bp3-outlined.bp3-intent-danger:active, .bp3-button.bp3-outlined.bp3-intent-danger:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-danger.bp3-active, .bp3-button.bp3-outlined.bp3-intent-danger:active {
+  background: rgba(219, 55, 55, 0.3);
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button.bp3-outlined.bp3-intent-danger.bp3-disabled.bp3-active, .bp3-button.bp3-outlined.bp3-intent-danger:disabled.bp3-active {
+  background: rgba(219, 55, 55, 0.3);
+}
+
+a.bp3-button, a.bp3-button:active, a.bp3-button:hover {
+  color: rgb(24, 32, 38);
+}
+
+.bp3-button-group .bp3-button.bp3-active, .bp3-button-group .bp3-button:active {
+  z-index: 7;
+}
+
+.bp3-button-group .bp3-button[class*="bp3-intent-"].bp3-active, .bp3-button-group .bp3-button[class*="bp3-intent-"]:active {
+  z-index: 12;
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-active, .bp3-button-group.bp3-minimal .bp3-button:active {
+  background: rgba(115, 134, 148, 0.3);
+  box-shadow: none;
+  color: rgb(24, 32, 38);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-disabled:hover.bp3-active, .bp3-button-group.bp3-minimal .bp3-button:disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button:disabled:hover.bp3-active {
+  background: rgba(115, 134, 148, 0.3);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary:active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary:active {
+  background: rgba(19, 124, 189, 0.3);
+  color: rgb(16, 107, 163);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary.bp3-disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-primary:disabled.bp3-active {
+  background: rgba(19, 124, 189, 0.3);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success:active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success:active {
+  background: rgba(15, 153, 96, 0.3);
+  color: rgb(13, 128, 80);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success.bp3-disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-success:disabled.bp3-active {
+  background: rgba(15, 153, 96, 0.3);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning:active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning:active {
+  background: rgba(217, 130, 43, 0.3);
+  color: rgb(191, 115, 38);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning.bp3-disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-warning:disabled.bp3-active {
+  background: rgba(217, 130, 43, 0.3);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger:active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger:active {
+  background: rgba(219, 55, 55, 0.3);
+  color: rgb(194, 48, 48);
+}
+
+.bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger.bp3-disabled.bp3-active, .bp3-button-group.bp3-minimal .bp3-button.bp3-intent-danger:disabled.bp3-active {
+  background: rgba(219, 55, 55, 0.3);
+}
+
+.bp3-card.bp3-interactive:hover {
+  box-shadow: rgba(16, 22, 26, 0.1) 0px 0px 0px 1px, rgba(16, 22, 26, 0.2) 0px 2px 4px, rgba(16, 22, 26, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+
+.bp3-card.bp3-interactive:active {
+  box-shadow: rgba(16, 22, 26, 0.1) 0px 0px 0px 1px, rgba(16, 22, 26, 0) 0px 0px 0px, rgba(16, 22, 26, 0.2) 0px 1px 1px;
+  opacity: 0.9;
+}
+
+.bp3-dialog-container.bp3-overlay-appear-active > .bp3-dialog, .bp3-dialog-container.bp3-overlay-enter-active > .bp3-dialog {
+  opacity: 1;
+  transform: scale(1);
+  transition-duration: 0.3s;
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+}
+
+.bp3-dialog-container.bp3-overlay-exit-active > .bp3-dialog {
+  opacity: 0;
+  transform: scale(0.5);
+  transition-duration: 0.3s;
+  transition-property: opacity, transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+}
+
+.bp3-active.bp3-dialog-step-viewed .bp3-dialog-step-icon {
+  background-color: rgb(43, 149, 214);
+}
+
+.bp3-active.bp3-dialog-step-viewed .bp3-dialog-step-title {
+  color: rgb(43, 149, 214);
+}
+
+.bp3-dialog-step-viewed:not(.bp3-active) .bp3-dialog-step-title {
+  color: rgb(24, 32, 38);
+}
+
+.bp3-drawer.bp3-position-top.bp3-overlay-appear-active, .bp3-drawer.bp3-position-top.bp3-overlay-enter-active {
+  transform: translateY(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-top.bp3-overlay-exit-active {
+  transform: translateY(-100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-bottom.bp3-overlay-appear-active, .bp3-drawer.bp3-position-bottom.bp3-overlay-enter-active {
+  transform: translateY(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-bottom.bp3-overlay-exit-active {
+  transform: translateY(100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-left.bp3-overlay-appear-active, .bp3-drawer.bp3-position-left.bp3-overlay-enter-active {
+  transform: translateX(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-left.bp3-overlay-exit-active {
+  transform: translateX(-100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-right.bp3-overlay-appear-active, .bp3-drawer.bp3-position-right.bp3-overlay-enter-active {
+  transform: translateX(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer.bp3-position-right.bp3-overlay-exit-active {
+  transform: translateX(100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right):not(.bp3-vertical).bp3-overlay-appear-active, .bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right):not(.bp3-vertical).bp3-overlay-enter-active {
+  transform: translateX(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right):not(.bp3-vertical).bp3-overlay-exit-active {
+  transform: translateX(100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right).bp3-vertical.bp3-overlay-appear-active, .bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right).bp3-vertical.bp3-overlay-enter-active {
+  transform: translateY(0px);
+  transition-duration: 0.2s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-drawer:not(.bp3-position-top):not(.bp3-position-bottom):not(.bp3-position-left):not(.bp3-position-right).bp3-vertical.bp3-overlay-exit-active {
+  transform: translateY(100%);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-control-group .bp3-button:active, .bp3-control-group .bp3-html-select select:active, .bp3-control-group .bp3-select select:active {
+  z-index: 7;
+}
+
+.bp3-control-group .bp3-button[class*="bp3-intent"]:active, .bp3-control-group .bp3-html-select select[class*="bp3-intent"]:active, .bp3-control-group .bp3-select select[class*="bp3-intent"]:active {
+  z-index: 12;
+}
+
+.bp3-control input:not(:disabled):active:checked ~ .bp3-control-indicator {
+  background: rgb(14, 90, 138);
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-control input:not(:disabled):active ~ .bp3-control-indicator {
+  background: rgb(216, 225, 232);
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-control.bp3-checkbox input:not(:disabled):active:indeterminate ~ .bp3-control-indicator {
+  background: rgb(14, 90, 138);
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-control.bp3-switch input:not(:disabled):active ~ .bp3-control-indicator {
+  background: rgba(92, 112, 128, 0.5);
+}
+
+.bp3-control.bp3-switch input:checked:not(:disabled):active ~ .bp3-control-indicator {
+  background: rgb(14, 90, 138);
+}
+
+.bp3-file-upload-input.bp3-active, .bp3-file-upload-input:focus {
+  box-shadow: rgb(19, 124, 189) 0px 0px 0px 1px, rgba(19, 124, 189, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+}
+
+.bp3-file-upload-input:active::after {
+  background-color: rgb(216, 225, 232);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-input.bp3-active, .bp3-input:focus {
+  box-shadow: rgb(19, 124, 189) 0px 0px 0px 1px, rgba(19, 124, 189, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+}
+
+.bp3-html-select select.bp3-active, .bp3-html-select select:active, .bp3-select select.bp3-active, .bp3-select select:active {
+  background-color: rgb(216, 225, 232);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-html-select select.bp3-disabled.bp3-active, .bp3-html-select select.bp3-disabled.bp3-active:hover, .bp3-html-select select:disabled.bp3-active, .bp3-html-select select:disabled.bp3-active:hover, .bp3-select select.bp3-disabled.bp3-active, .bp3-select select.bp3-disabled.bp3-active:hover, .bp3-select select:disabled.bp3-active, .bp3-select select:disabled.bp3-active:hover {
+  background: rgba(206, 217, 224, 0.7);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-active, .bp3-html-select.bp3-minimal select:active, .bp3-select.bp3-minimal select.bp3-active, .bp3-select.bp3-minimal select:active {
+  background: rgba(115, 134, 148, 0.3);
+  box-shadow: none;
+  color: rgb(24, 32, 38);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-disabled.bp3-active, .bp3-html-select.bp3-minimal select.bp3-disabled:hover.bp3-active, .bp3-html-select.bp3-minimal select:disabled.bp3-active, .bp3-html-select.bp3-minimal select:disabled:hover.bp3-active, .bp3-select.bp3-minimal select.bp3-disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-disabled:hover.bp3-active, .bp3-select.bp3-minimal select:disabled.bp3-active, .bp3-select.bp3-minimal select:disabled:hover.bp3-active {
+  background: rgba(115, 134, 148, 0.3);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-primary.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-primary:active, .bp3-html-select.bp3-minimal select.bp3-intent-primary:hover, .bp3-select.bp3-minimal select.bp3-intent-primary.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-primary:active, .bp3-select.bp3-minimal select.bp3-intent-primary:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(16, 107, 163);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-primary.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-primary:active, .bp3-select.bp3-minimal select.bp3-intent-primary.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-primary:active {
+  background: rgba(19, 124, 189, 0.3);
+  color: rgb(16, 107, 163);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-primary.bp3-disabled.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-primary:disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-primary.bp3-disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-primary:disabled.bp3-active {
+  background: rgba(19, 124, 189, 0.3);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-success.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-success:active, .bp3-html-select.bp3-minimal select.bp3-intent-success:hover, .bp3-select.bp3-minimal select.bp3-intent-success.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-success:active, .bp3-select.bp3-minimal select.bp3-intent-success:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(13, 128, 80);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-success.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-success:active, .bp3-select.bp3-minimal select.bp3-intent-success.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-success:active {
+  background: rgba(15, 153, 96, 0.3);
+  color: rgb(13, 128, 80);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-success.bp3-disabled.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-success:disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-success.bp3-disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-success:disabled.bp3-active {
+  background: rgba(15, 153, 96, 0.3);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-warning.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-warning:active, .bp3-html-select.bp3-minimal select.bp3-intent-warning:hover, .bp3-select.bp3-minimal select.bp3-intent-warning.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-warning:active, .bp3-select.bp3-minimal select.bp3-intent-warning:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(191, 115, 38);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-warning.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-warning:active, .bp3-select.bp3-minimal select.bp3-intent-warning.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-warning:active {
+  background: rgba(217, 130, 43, 0.3);
+  color: rgb(191, 115, 38);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-warning.bp3-disabled.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-warning:disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-warning.bp3-disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-warning:disabled.bp3-active {
+  background: rgba(217, 130, 43, 0.3);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-danger.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-danger:active, .bp3-html-select.bp3-minimal select.bp3-intent-danger:hover, .bp3-select.bp3-minimal select.bp3-intent-danger.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-danger:active, .bp3-select.bp3-minimal select.bp3-intent-danger:hover {
+  background: none;
+  box-shadow: none;
+  color: rgb(194, 48, 48);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-danger.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-danger:active, .bp3-select.bp3-minimal select.bp3-intent-danger.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-danger:active {
+  background: rgba(219, 55, 55, 0.3);
+  color: rgb(194, 48, 48);
+}
+
+.bp3-html-select.bp3-minimal select.bp3-intent-danger.bp3-disabled.bp3-active, .bp3-html-select.bp3-minimal select.bp3-intent-danger:disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-danger.bp3-disabled.bp3-active, .bp3-select.bp3-minimal select.bp3-intent-danger:disabled.bp3-active {
+  background: rgba(219, 55, 55, 0.3);
+}
+
+table.bp3-html-table.bp3-interactive tbody tr:hover td {
+  background-color: rgba(191, 204, 214, 0.3);
+  cursor: pointer;
+}
+
+table.bp3-html-table.bp3-interactive tbody tr:active td {
+  background-color: rgba(191, 204, 214, 0.4);
+}
+
+.bp3-menu-item.bp3-intent-primary.bp3-active, .bp3-menu-item.bp3-intent-primary:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item {
+  background-color: rgb(19, 124, 189);
+}
+
+.bp3-menu-item.bp3-intent-primary:active {
+  background-color: rgb(16, 107, 163);
+}
+
+  .bp3-menu-item.bp3-intent-primary.bp3-active, .bp3-menu-item.bp3-intent-primary.bp3-active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-primary.bp3-active::after, .bp3-menu-item.bp3-intent-primary.bp3-active::before, .bp3-menu-item.bp3-intent-primary:active, .bp3-menu-item.bp3-intent-primary:active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-primary:active::after, .bp3-menu-item.bp3-intent-primary:active::before, .bp3-menu-item.bp3-intent-primary:hover, .bp3-menu-item.bp3-intent-primary:hover .bp3-menu-item-label, .bp3-menu-item.bp3-intent-primary:hover::after, .bp3-menu-item.bp3-intent-primary:hover::before, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item .bp3-menu-item-label, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item::after, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-primary.bp3-menu-item::before {
+    color: rgb(255, 255, 255);
+  }
+
+.bp3-menu-item.bp3-intent-success.bp3-active, .bp3-menu-item.bp3-intent-success:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-success.bp3-menu-item {
+  background-color: rgb(15, 153, 96);
+}
+
+.bp3-menu-item.bp3-intent-success:active {
+  background-color: rgb(13, 128, 80);
+}
+
+  .bp3-menu-item.bp3-intent-success.bp3-active, .bp3-menu-item.bp3-intent-success.bp3-active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-success.bp3-active::after, .bp3-menu-item.bp3-intent-success.bp3-active::before, .bp3-menu-item.bp3-intent-success:active, .bp3-menu-item.bp3-intent-success:active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-success:active::after, .bp3-menu-item.bp3-intent-success:active::before, .bp3-menu-item.bp3-intent-success:hover, .bp3-menu-item.bp3-intent-success:hover .bp3-menu-item-label, .bp3-menu-item.bp3-intent-success:hover::after, .bp3-menu-item.bp3-intent-success:hover::before, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-success.bp3-menu-item, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-success.bp3-menu-item .bp3-menu-item-label, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-success.bp3-menu-item::after, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-success.bp3-menu-item::before {
+    color: rgb(255, 255, 255);
+  }
+
+.bp3-menu-item.bp3-intent-warning.bp3-active, .bp3-menu-item.bp3-intent-warning:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-warning.bp3-menu-item {
+  background-color: rgb(217, 130, 43);
+}
+
+.bp3-menu-item.bp3-intent-warning:active {
+  background-color: rgb(191, 115, 38);
+}
+
+  .bp3-menu-item.bp3-intent-warning.bp3-active, .bp3-menu-item.bp3-intent-warning.bp3-active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-warning.bp3-active::after, .bp3-menu-item.bp3-intent-warning.bp3-active::before, .bp3-menu-item.bp3-intent-warning:active, .bp3-menu-item.bp3-intent-warning:active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-warning:active::after, .bp3-menu-item.bp3-intent-warning:active::before, .bp3-menu-item.bp3-intent-warning:hover, .bp3-menu-item.bp3-intent-warning:hover .bp3-menu-item-label, .bp3-menu-item.bp3-intent-warning:hover::after, .bp3-menu-item.bp3-intent-warning:hover::before, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-warning.bp3-menu-item, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-warning.bp3-menu-item .bp3-menu-item-label, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-warning.bp3-menu-item::after, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-warning.bp3-menu-item::before {
+    color: rgb(255, 255, 255);
+  }
+
+.bp3-menu-item.bp3-intent-danger.bp3-active, .bp3-menu-item.bp3-intent-danger:hover, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-danger.bp3-menu-item {
+  background-color: rgb(219, 55, 55);
+}
+
+.bp3-menu-item.bp3-intent-danger:active {
+  background-color: rgb(194, 48, 48);
+}
+
+  .bp3-menu-item.bp3-intent-danger.bp3-active, .bp3-menu-item.bp3-intent-danger.bp3-active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-danger.bp3-active::after, .bp3-menu-item.bp3-intent-danger.bp3-active::before, .bp3-menu-item.bp3-intent-danger:active, .bp3-menu-item.bp3-intent-danger:active .bp3-menu-item-label, .bp3-menu-item.bp3-intent-danger:active::after, .bp3-menu-item.bp3-intent-danger:active::before, .bp3-menu-item.bp3-intent-danger:hover, .bp3-menu-item.bp3-intent-danger:hover .bp3-menu-item-label, .bp3-menu-item.bp3-intent-danger:hover::after, .bp3-menu-item.bp3-intent-danger:hover::before, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-danger.bp3-menu-item, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-danger.bp3-menu-item .bp3-menu-item-label, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-danger.bp3-menu-item::after, .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-intent-danger.bp3-menu-item::before {
+    color: rgb(255, 255, 255);
+  }
+
+.bp3-menu-item.bp3-active, .bp3-menu-item:active {
+  background-color: rgba(115, 134, 148, 0.3);
+}
+
+.bp3-overlay-backdrop.bp3-overlay-appear-active, .bp3-overlay-backdrop.bp3-overlay-enter-active {
+  opacity: 1;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-overlay-backdrop.bp3-overlay-exit-active {
+  opacity: 0;
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-panel-stack-push .bp3-panel-stack-appear-active, .bp3-panel-stack-push .bp3-panel-stack-enter-active {
+  transform: translate(0px);
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack-push .bp3-panel-stack-exit-active {
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack-pop .bp3-panel-stack-appear, .bp3-panel-stack-pop .bp3-panel-stack-enter, .bp3-panel-stack-push .bp3-panel-stack-exit-active {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.bp3-panel-stack-pop .bp3-panel-stack-appear-active, .bp3-panel-stack-pop .bp3-panel-stack-enter-active {
+  transform: translate(0px);
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack-pop .bp3-panel-stack-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack2-push .bp3-panel-stack2-appear-active, .bp3-panel-stack2-push .bp3-panel-stack2-enter-active {
+  transform: translate(0px);
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack2-push .bp3-panel-stack2-exit-active {
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack2-pop .bp3-panel-stack2-appear, .bp3-panel-stack2-pop .bp3-panel-stack2-enter, .bp3-panel-stack2-push .bp3-panel-stack2-exit-active {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.bp3-panel-stack2-pop .bp3-panel-stack2-appear-active, .bp3-panel-stack2-pop .bp3-panel-stack2-enter-active {
+  transform: translate(0px);
+  opacity: 1;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-panel-stack2-pop .bp3-panel-stack2-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition-duration: 0.4s;
+  transition-property: transform, opacity, -webkit-transform;
+  transition-timing-function: ease;
+}
+
+.bp3-popover-appear-active > .bp3-popover, .bp3-popover-enter-active > .bp3-popover {
+  transform: scale(1);
+  transition-duration: 0.3s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+}
+
+.bp3-popover-exit-active > .bp3-popover {
+  transform: scale(0.3);
+  transition-duration: 0.3s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+}
+
+.bp3-popover-appear-active > .bp3-popover.bp3-minimal.bp3-popover, .bp3-popover-enter-active > .bp3-popover.bp3-minimal.bp3-popover {
+  transform: scale(1);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-popover-exit-active > .bp3-popover.bp3-minimal.bp3-popover {
+  transform: scale(1);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-transition-container.bp3-popover-appear-active, .bp3-transition-container.bp3-popover-enter-active {
+  opacity: 1;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-transition-container.bp3-popover-exit-active {
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-slider:active {
+  cursor: grabbing;
+}
+
+.bp3-slider-handle.bp3-active, .bp3-slider-handle:active {
+  background-color: rgb(216, 225, 232);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.bp3-slider-handle.bp3-disabled.bp3-active, .bp3-slider-handle.bp3-disabled.bp3-active:hover, .bp3-slider-handle:disabled.bp3-active, .bp3-slider-handle:disabled.bp3-active:hover {
+  background: rgba(206, 217, 224, 0.7);
+}
+
+.bp3-slider-handle.bp3-active {
+  background-color: rgb(216, 225, 232);
+  background-image: none;
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px, rgba(16, 22, 26, 0.1) 0px 1px 1px inset;
+  cursor: grabbing;
+}
+
+.bp3-tag.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-interactive:hover {
+    background-color: rgba(92, 112, 128, 0.85);
+  }
+
+  .bp3-tag.bp3-interactive.bp3-active, .bp3-tag.bp3-interactive:active {
+    background-color: rgba(92, 112, 128, 0.7);
+  }
+
+.bp3-tag.bp3-intent-primary.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-intent-primary.bp3-interactive:hover {
+    background-color: rgba(19, 124, 189, 0.85);
+  }
+
+  .bp3-tag.bp3-intent-primary.bp3-interactive.bp3-active, .bp3-tag.bp3-intent-primary.bp3-interactive:active {
+    background-color: rgba(19, 124, 189, 0.7);
+  }
+
+.bp3-tag.bp3-intent-success.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-intent-success.bp3-interactive:hover {
+    background-color: rgba(15, 153, 96, 0.85);
+  }
+
+  .bp3-tag.bp3-intent-success.bp3-interactive.bp3-active, .bp3-tag.bp3-intent-success.bp3-interactive:active {
+    background-color: rgba(15, 153, 96, 0.7);
+  }
+
+.bp3-tag.bp3-intent-warning.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-intent-warning.bp3-interactive:hover {
+    background-color: rgba(217, 130, 43, 0.85);
+  }
+
+  .bp3-tag.bp3-intent-warning.bp3-interactive.bp3-active, .bp3-tag.bp3-intent-warning.bp3-interactive:active {
+    background-color: rgba(217, 130, 43, 0.7);
+  }
+
+.bp3-tag.bp3-intent-danger.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-intent-danger.bp3-interactive:hover {
+    background-color: rgba(219, 55, 55, 0.85);
+  }
+
+  .bp3-tag.bp3-intent-danger.bp3-interactive.bp3-active, .bp3-tag.bp3-intent-danger.bp3-interactive:active {
+    background-color: rgba(219, 55, 55, 0.7);
+  }
+
+.bp3-tag.bp3-minimal:not([class*="bp3-intent-"]).bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-minimal:not([class*="bp3-intent-"]).bp3-interactive:hover {
+    background-color: rgba(92, 112, 128, 0.3);
+  }
+
+  .bp3-tag.bp3-minimal:not([class*="bp3-intent-"]).bp3-interactive.bp3-active, .bp3-tag.bp3-minimal:not([class*="bp3-intent-"]).bp3-interactive:active {
+    background-color: rgba(92, 112, 128, 0.4);
+  }
+
+.bp3-tag.bp3-minimal.bp3-intent-primary.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-minimal.bp3-intent-primary.bp3-interactive:hover {
+    background-color: rgba(19, 124, 189, 0.25);
+  }
+
+  .bp3-tag.bp3-minimal.bp3-intent-primary.bp3-interactive.bp3-active, .bp3-tag.bp3-minimal.bp3-intent-primary.bp3-interactive:active {
+    background-color: rgba(19, 124, 189, 0.35);
+  }
+
+.bp3-tag.bp3-minimal.bp3-intent-success.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-minimal.bp3-intent-success.bp3-interactive:hover {
+    background-color: rgba(15, 153, 96, 0.25);
+  }
+
+  .bp3-tag.bp3-minimal.bp3-intent-success.bp3-interactive.bp3-active, .bp3-tag.bp3-minimal.bp3-intent-success.bp3-interactive:active {
+    background-color: rgba(15, 153, 96, 0.35);
+  }
+
+.bp3-tag.bp3-minimal.bp3-intent-warning.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-minimal.bp3-intent-warning.bp3-interactive:hover {
+    background-color: rgba(217, 130, 43, 0.25);
+  }
+
+  .bp3-tag.bp3-minimal.bp3-intent-warning.bp3-interactive.bp3-active, .bp3-tag.bp3-minimal.bp3-intent-warning.bp3-interactive:active {
+    background-color: rgba(217, 130, 43, 0.35);
+  }
+
+.bp3-tag.bp3-minimal.bp3-intent-danger.bp3-interactive {
+  cursor: pointer;
+}
+
+  .bp3-tag.bp3-minimal.bp3-intent-danger.bp3-interactive:hover {
+    background-color: rgba(219, 55, 55, 0.25);
+  }
+
+  .bp3-tag.bp3-minimal.bp3-intent-danger.bp3-interactive.bp3-active, .bp3-tag.bp3-minimal.bp3-intent-danger.bp3-interactive:active {
+    background-color: rgba(219, 55, 55, 0.35);
+  }
+
+.bp3-tag-remove:active {
+  opacity: 1;
+}
+
+.bp3-tag-input .bp3-tag.bp3-active {
+  outline: rgba(19, 124, 189, 0.6) auto 2px;
+  outline-offset: 0px;
+}
+
+.bp3-tag-input.bp3-active {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(19, 124, 189) 0px 0px 0px 1px, rgba(19, 124, 189, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+}
+
+  .bp3-tag-input.bp3-active.bp3-intent-primary {
+    box-shadow: rgb(16, 107, 163) 0px 0px 0px 1px, rgba(16, 107, 163, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+  }
+
+  .bp3-tag-input.bp3-active.bp3-intent-success {
+    box-shadow: rgb(13, 128, 80) 0px 0px 0px 1px, rgba(13, 128, 80, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+  }
+
+  .bp3-tag-input.bp3-active.bp3-intent-warning {
+    box-shadow: rgb(191, 115, 38) 0px 0px 0px 1px, rgba(191, 115, 38, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+  }
+
+  .bp3-tag-input.bp3-active.bp3-intent-danger {
+    box-shadow: rgb(194, 48, 48) 0px 0px 0px 1px, rgba(194, 48, 48, 0.3) 0px 0px 0px 3px, rgba(16, 22, 26, 0.2) 0px 1px 1px inset;
+  }
+
+.bp3-toast.bp3-toast-appear-active, .bp3-toast.bp3-toast-enter-active {
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+}
+
+  .bp3-toast.bp3-toast-appear-active ~ .bp3-toast, .bp3-toast.bp3-toast-enter-active ~ .bp3-toast {
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+    transition-property: transform, -webkit-transform;
+    transition-timing-function: cubic-bezier(0.54, 1.12, 0.38, 1.11);
+  }
+
+.bp3-toast.bp3-toast-exit-active {
+  opacity: 0;
+  filter: blur(10px);
+  transition-duration: 0.3s;
+  transition-property: opacity, filter, -webkit-filter;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+  .bp3-toast.bp3-toast-exit-active ~ .bp3-toast {
+    transform: translateY(-40px);
+    transition: transform 0.1s cubic-bezier(0.4, 1, 0.75, 0.9) 50ms, -webkit-transform;
+  }
+
+.bp3-toast[class*="bp3-intent-"] .bp3-button, .bp3-toast[class*="bp3-intent-"] .bp3-button .bp3-icon, .bp3-toast[class*="bp3-intent-"] .bp3-button:active, .bp3-toast[class*="bp3-intent-"] .bp3-button::before {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+  .bp3-toast[class*="bp3-intent-"] .bp3-button:active {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: rgb(255, 255, 255) !important;
+  }
+
+.bp3-toast-container-bottom .bp3-toast.bp3-toast-appear:not(.bp3-toast-appear-active), .bp3-toast-container-bottom .bp3-toast.bp3-toast-appear:not(.bp3-toast-appear-active) ~ .bp3-toast, .bp3-toast-container-bottom .bp3-toast.bp3-toast-enter:not(.bp3-toast-enter-active), .bp3-toast-container-bottom .bp3-toast.bp3-toast-enter:not(.bp3-toast-enter-active) ~ .bp3-toast, .bp3-toast-container-bottom .bp3-toast.bp3-toast-exit-active ~ .bp3-toast, .bp3-toast-container-bottom .bp3-toast.bp3-toast-leave-active ~ .bp3-toast {
+  transform: translateY(60px);
+}
+
+.bp3-popover-appear-active > .bp3-tooltip, .bp3-popover-enter-active > .bp3-tooltip {
+  transform: scale(1);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-popover-exit-active > .bp3-tooltip {
+  transform: scale(0.8);
+  transition-duration: 0.1s;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-datepicker .DayPicker-Day:active {
+  background: rgb(206, 217, 224);
+}
+
+.bp3-omnibar.bp3-overlay-appear-active, .bp3-omnibar.bp3-overlay-enter-active {
+  filter: blur(0px);
+  opacity: 1;
+  transition-duration: 0.2s;
+  transition-property: filter, opacity, -webkit-filter;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.bp3-omnibar.bp3-overlay-exit-active {
+  filter: blur(20px);
+  opacity: 0.2;
+  transition-duration: 0.2s;
+  transition-property: filter, opacity, -webkit-filter;
+  transition-timing-function: cubic-bezier(0.4, 1, 0.75, 0.9);
+}
+
+.paging_full_numbers span.paginate_button, .paging_full_numbers span.paginate_active {
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin: 0px 3px;
+  cursor: pointer;
+}
+
+.paging_full_numbers span.paginate_active {
+  background-color: rgb(153, 179, 255);
+}
+
+a:hover, a:active {
+  outline: 0px;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+  outline: 0px;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgb(39, 169, 227);
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
+  background-color: rgb(232, 232, 232);
+}
+
+.pagination ul > .active > a, .pagination ul > .active > span {
+  color: rgb(85, 85, 85);
+  cursor: default;
+}
+
+.progress.active .bar {
+  animation: 2s linear 0s infinite normal none running progress-bar-stripes;
+}
+
+.cp-table-active, .cp-table-active > td, .cp-table-active > th {
+  background-color: rgb(245, 245, 245);
+}
+
+.cp-table-hover .cp-table-active:hover, .cp-table-hover .cp-table-active:hover > td, .cp-table-hover .cp-table-active:hover > th {
+  background-color: rgb(232, 232, 232);
+}
+
+.cp-tabs > li:not(.active) > a {
+  border-radius: 3px;
+  background-color: rgb(247, 247, 247);
+  border-color: rgb(221, 221, 221) !important;
+}
+
+.cp-tabs > li.active {
+  margin-bottom: -2px;
+}
+
+@media (max-width: 991px) {
+  .cp-tabs > li.active {
+    order: 100;
+  }
+}
+
+.cp-tabs > li.active > a {
+  margin-bottom: -1px;
+  font-weight: 700;
+  background-color: rgb(247, 247, 247);
+  padding-bottom: 12px !important;
+}
+
+  .cp-tabs > li.active > a:hover {
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255) 50%, rgb(247, 247, 247));
+  }
+
+  .cp-tabs > li.active > a, .cp-tabs > li.active > a:hover {
+    border-bottom-color: rgb(247, 247, 247) !important;
+  }
+
+.cp-tabs > li.open .dropdown-toggle:active, .cp-tabs > li.open .dropdown-toggle:hover {
+  background: rgb(153, 153, 153);
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .cp-tabs > li.dropdown.active > .dropdown-menu {
+    left: auto;
+    right: 3px;
+  }
+}
+
+.cp-tabs > li > a:active, .cp-tabs > li > a:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.cp-card-header-tabs.cp-tabs > li.active > a, .cp-card-header-tabs.cp-tabs > li.active > a:hover {
+  background-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255) !important;
+}
+
+.cp-btn:active {
+  outline: 0px;
+  background-image: none;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset;
+}
+
+.cp-btn-outline:active:not(:disabled):not([disabled]), .cp-btn-outline:focus:not(:disabled):not([disabled]), .cp-btn-outline:hover:not(:disabled):not([disabled]) {
+  color: inherit;
+  background-color: rgb(226, 226, 226);
+  border-color: rgb(226, 226, 226);
+}
+
+.cp-btn-primary:active:not(:disabled):not([disabled]), .cp-btn-primary:focus:not(:disabled):not([disabled]), .cp-btn-primary:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(53, 126, 189);
+  border-color: rgb(53, 126, 189);
+}
+
+.cp-btn-outline-primary:active:not(:disabled):not([disabled]), .cp-btn-outline-primary:focus:not(:disabled):not([disabled]), .cp-btn-outline-primary:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 139, 202);
+  border-color: rgb(66, 139, 202);
+}
+
+.cp-btn-secondary:active:not(:disabled):not([disabled]), .cp-btn-secondary:focus:not(:disabled):not([disabled]), .cp-btn-secondary:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(120, 129, 138);
+  border-color: rgb(120, 129, 138);
+}
+
+.cp-btn-outline-secondary:active:not(:disabled):not([disabled]), .cp-btn-outline-secondary:focus:not(:disabled):not([disabled]), .cp-btn-outline-secondary:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(134, 142, 150);
+  border-color: rgb(134, 142, 150);
+}
+
+.cp-btn-success:active:not(:disabled):not([disabled]), .cp-btn-success:focus:not(:disabled):not([disabled]), .cp-btn-success:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(76, 174, 76);
+  border-color: rgb(76, 174, 76);
+}
+
+.cp-btn-outline-success:active:not(:disabled):not([disabled]), .cp-btn-outline-success:focus:not(:disabled):not([disabled]), .cp-btn-outline-success:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(92, 184, 92);
+  border-color: rgb(92, 184, 92);
+}
+
+.cp-btn-danger:active:not(:disabled):not([disabled]), .cp-btn-danger:focus:not(:disabled):not([disabled]), .cp-btn-danger:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(212, 63, 58);
+  border-color: rgb(212, 63, 58);
+}
+
+.cp-btn-outline-danger:active:not(:disabled):not([disabled]), .cp-btn-outline-danger:focus:not(:disabled):not([disabled]), .cp-btn-outline-danger:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(217, 83, 79);
+  border-color: rgb(217, 83, 79);
+}
+
+.cp-btn-info:active:not(:disabled):not([disabled]), .cp-btn-info:focus:not(:disabled):not([disabled]), .cp-btn-info:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 184, 218);
+  border-color: rgb(70, 184, 218);
+}
+
+.cp-btn-outline-info:active:not(:disabled):not([disabled]), .cp-btn-outline-info:focus:not(:disabled):not([disabled]), .cp-btn-outline-info:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(91, 192, 222);
+  border-color: rgb(91, 192, 222);
+}
+
+.cp-btn-warning:active:not(:disabled):not([disabled]), .cp-btn-warning:focus:not(:disabled):not([disabled]), .cp-btn-warning:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(238, 162, 54);
+  border-color: rgb(238, 162, 54);
+}
+
+.cp-btn-outline-warning:active:not(:disabled):not([disabled]), .cp-btn-outline-warning:focus:not(:disabled):not([disabled]), .cp-btn-outline-warning:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(240, 173, 78);
+  border-color: rgb(240, 173, 78);
+}
+
+.cp-btn-light:active:not(:disabled):not([disabled]), .cp-btn-light:focus:not(:disabled):not([disabled]), .cp-btn-light:hover:not(:disabled):not([disabled]) {
+  background-color: rgb(233, 236, 239);
+  border-color: rgb(233, 236, 239);
+}
+
+.cp-btn-outline-light:active:not(:disabled):not([disabled]), .cp-btn-outline-light:focus:not(:disabled):not([disabled]), .cp-btn-outline-light:hover:not(:disabled):not([disabled]) {
+  color: rgb(33, 37, 41);
+  background-color: rgb(248, 249, 250);
+  border-color: rgb(248, 249, 250);
+}
+
+.cp-btn-outline-dark:active:not(:disabled):not([disabled]), .cp-btn-outline-dark:focus:not(:disabled):not([disabled]), .cp-btn-outline-dark:hover:not(:disabled):not([disabled]) {
+  color: rgb(255, 255, 255);
+  background-color: rgb(52, 58, 64);
+  border-color: rgb(52, 58, 64);
+}
+
+.cp-btn-group-vertical > .cp-btn:active, .cp-btn-group-vertical > .cp-btn:focus, .cp-btn-group > .cp-btn:active, .cp-btn-group > .cp-btn:focus {
+  z-index: 2;
+}
+
+.menuSortableCard.inactive, .subMenuSortableCard.inactive {
+  color: rgb(153, 153, 153);
+}
+
+.copyDefaultValue, .copyDefaultValue:active {
+  background-image: url("//astatic.nodacdn.net/common.images/cp.icon/system-copy.svg");
+}
+
+.cp-list-group-item-action:active {
+  background-color: rgb(233, 236, 239);
+}
+
+.cp-list-group-item.active {
+  z-index: 2;
+  color: rgb(255, 255, 255);
+  background-color: rgb(66, 139, 202);
+  border-color: rgb(66, 139, 202);
+}
+
+.cp-list-group-item + .cp-list-group-item.active {
+  margin-top: -1px;
+  border-top-width: 1px;
+}
+
+@media (max-width: 575px) {
+  .pagination ul > li > a:not(.firstPage):not(.prevPage):not(.active):not(.nextPage):not(.lastPage) {
+    display: none;
+  }
+}
+
+.ui-dialog .ui-dialog-buttonset button.ui-button:active {
+  box-shadow: rgba(16, 22, 26, 0.2) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+  background: rgb(216, 225, 232);
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-danger:active, .ui-dialog .ui-dialog-buttonset button.cp-btn-primary:active, .ui-dialog .ui-dialog-buttonset button.cp-btn-success:active, .ui-dialog .ui-dialog-buttonset button.cp-btn-warning:active {
+  box-shadow: rgba(16, 22, 26, 0.4) 0px 0px 0px 1px inset, rgba(16, 22, 26, 0.2) 0px 1px 2px inset;
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-primary:active {
+  background: rgb(14, 90, 138) !important;
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-primary:active, .ui-dialog .ui-dialog-buttonset button.cp-btn-primary:disabled {
+  color: rgb(255, 255, 255);
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-warning:active {
+  background: rgb(166, 99, 33);
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-warning:active, .ui-dialog .ui-dialog-buttonset button.cp-btn-warning:hover {
+  color: rgb(255, 255, 255);
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-danger:active {
+  background: rgb(168, 42, 42);
+}
+
+.ui-dialog .ui-dialog-buttonset button.cp-btn-success:active {
+  background: rgb(10, 102, 64);
+}
+
+.controlTabsContainer .active::after {
+  border-width: 0px 6px 6px;
+}
+
+.controlTabsContainer.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.no-opacity .controlTabsContainer.active .dropdown, .no-pointerevents .controlTabsContainer.active .dropdown {
+  display: block;
+}
+
+.promotionOfferNavButton.active {
+  background: rgb(202, 202, 202);
+}
+
+a.promotionOfferDescriptionTab.active, a.promotionOfferDescriptionTab:hover {
+  color: rgb(64, 64, 64);
+  border-bottom-color: rgb(138, 137, 137);
+}
+
+.multilang-textarea-preview, .multilang-textarea-preview:active, .multilang-textarea-preview:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.cyrillic-symbols-check-container .cyrillic-symbols-alert-icon.active .cyrillic-symbols-hint, .cyrillic-symbols-check-container .cyrillic-symbols-alert-icon:hover .cyrillic-symbols-hint {
+  display: block;
+}
+
+.cp-btn.ts_state:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset, rgb(255, 255, 255) 0px 0px 0px 1px inset;
+}

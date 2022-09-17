@@ -1,0 +1,16 @@
+﻿<div class="user-panel">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a class="text-dark" href="@Url.Action("LogOut", "Home", new {returnUrl =  $"https://{this.Context.Request.Host}{this.Context.Request.Path}"})">
+            <i class="fas fa-sign-out-alt dark">
+                <span class="d-block" style="font-size: initial;">выход</span>
+            </i>
+        </a>
+    }
+    else
+    {
+        <i class="fas fa-sign-out-alt dark" data-bs-target="#login_modal" data-bs-toggle="modal">
+            <span class="d-block" style="font-size: initial;">вход</span>
+        </i>
+    }
+</div>

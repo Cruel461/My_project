@@ -1,0 +1,134 @@
+﻿@using ITWitor.Controllers
+@using Microsoft.AspNetCore.Html
+@{
+    Layout = null;
+}
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/labelholder.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/exstensions.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/lib/fancybox/css/jquery.fancybox.css" />
+    <!-- DevExtreme -->
+    <link href="~/lib/devextreme/css/dx.softblue.css" rel="stylesheet">
+    <script src="~/lib/devextreme/js/dx.utils.js"></script>
+    <script src="~/lib/devextreme/js/dx-quill.min.js"></script>
+    <script src="~/lib/devextreme/js/turndown.js"></script>
+    <script src="~/lib/devextreme/js/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/event.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cldrjs/0.4.4/cldr/supplemental.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/globalize/1.1.1/globalize/message.min.js" type="text/javascript"></script>
+    <script src="~/lib/devextreme/js/dx.all.js"></script>
+    <script src="~/lib/devextreme/js/dx.aspnet.data.js"></script>
+    <script src="~/lib/devextreme/js/dx.messages.ru.js"></script>
+    <script src="https://unpkg.com/devextreme-cldr-data@1.0.3/supplemental.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/devextreme-cldr-data@1.0.3/ru.js" type="text/javascript"></script>
+    <script src="https://yookassa.ru/payouts-data/2.0.1/widget.js"></script>
+    <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js"></script>
+    <!--  -->
+    <title>Технические работы</title>
+</head>
+
+<body>
+    <script>
+        Globalize.locale('ru');
+    </script>
+
+    <main>
+        <div class="container">
+            <div class="row h-100">
+                <div class="col-12 col-sm-10 col-md-7 col-xl-4 m-auto">
+                    <div class="card form-wrapper p-3 shadow">
+                        <div style="position:relative">
+
+                            <img class="card-img" src="~/src/img/animation_onservice.gif" height="400px" style="object-fit:contain;position:absolute" />
+                            <img class="card-img" src="~/src/img/logo.svg" height="400px" style="object-fit:contain" />
+                        </div>
+
+                        @*  <h2 class="text-center my-3">АВТОРИЗАЦИЯ</h2>*@
+                        <form id="login_form" method="post" action="@Url.ActionLink("LogIn","Home")">
+                            <div class="labelholder">
+                                <input class="form-control mb-2" type="text" name="email" placeholder="Email" />
+                            </div>
+                            <div class="labelholder">
+                                <input class="form-control" type="password" name="password" placeholder="Пароль" />
+                            </div>
+                            <input type="hidden" name="returnUrl" value="https://@this.Context.Request.Host@this.Context.Request.Path" />
+
+                            <div class="dx-button" text="войти" action="submit" style="display: block;height: 40px;margin-top: .5rem;"></div>
+                            @*
+                            <div class="d-grid mt-3" style="grid-template-columns: 47% 47%;justify-content: space-between;">
+                            <a role="button" class="btn btn-success" style="font-weight: 700;letter-spacing: 1.3px;" href="@Url.ActionLink("Registration", "Home")">Регистрация</a>
+
+
+                            <button type="submit" role="button" class="btn btn-primary" style="font-weight: 700;letter-spacing: 1.3px;">Вход</button>
+                            </div>*@
+                        </form>
+                        @*   <div class="card-footer">
+                        <a id="new_registration" href="/">РЕГИСТРАЦИЯ</a>
+                        <button id="reset_password" class="btn btn-secondary" style="font-weight: 700;letter-spacing: 1.3px;">ВОССТАНОВЛЕНИЕ ПАРОЛЯ</button>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="messages-wrapper">
+        @foreach (Message item in ViewBag.Messages)
+        {
+            <script>
+                $(function() {
+
+                    DevExpress.ui.notify({
+                        message: `@(new HtmlString(item.Text))`,
+                        type: '@item.MessageType.ToString().ToLower()',
+                        displayTime: 4000,
+                        animation: {
+                            show: {
+                                type: 'fade', duration: 400, from: 0, to: 1,
+                            },
+                            hide: { type: 'fade', duration: 40, to: 0 },
+                        },
+                        width: 300,
+                        shading: false,
+                        position: 'top center',
+                    });
+                });
+
+
+            </script>
+        }
+    </div>
+    <script>
+
+    </script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js" asp-append-version="true"></script>
+    <script src="~/js/labelholder.js" asp-append-version="true"></script>
+    <script src="~/lib/fancybox/js/jquery.fancybox.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function() {
+            //$('.messages-wrapper .alert').each((i, e) => {
+            //    let $msg = $(e);
+            //    $msg.find('button').on('click', () => {
+            //        $msg.fadeOut(350, () => $msg.remove());
+            //    });
+            //    setTimeout(() => { $msg.fadeOut(350, () => $msg.remove()); }, 4000);
+            //});
+            //$('.labelholder').labelholder();
+        });
+    </script>
+</body>
+
+</html>

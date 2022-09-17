@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Html
+@model ContentBlock?
+
+@if ((bool)ViewData["editingTrigger"])
+{
+    var blockId = @Model.Id + "_ContentBlock";
+
+    <div id="@blockId">
+        <div class="options">
+        </div>
+        <div class="html-editor"></div>
+    </div>
+
+
+    <script>
+        $(() => {
+            const markup = `@(new HtmlString(Model?.Html))`;
+            const editor = $('#@blockId > .html-editor').dxHtmlEditor({
+                height: 450,
+                value: markup,
+                valueType: "html",
+                tableContextMenu: { enabled: true },
+                tableResizing: { enabled: true },
+                multiline: true,
+                imageUpload: {
+                    tabs: ['file', 'url'],
+                    fileUploadMode: 'base64',
+                },
+                toolbar: {
+                    items: [
+                        {
+                            widget: 'dxButton',
+                            options: {
+                                icon: "save",
+                                hint: 'Сохранить',
+
+                                onClick() {
+                                    if (confirm('Сохранить изменения?'))
+                                        $('#@Model.Id\_ContentBlock_form').submit();
+                                },
+                            }
+                        },
+                        {
+                            widget: 'dxButton',
+                            options: {
+                                hint: 'Удалить',
+                                icon: "remove",
+                                onClick() {
+                                    if (confirm('Удалить блок?'))
+                                        $.get(`/Admin/RemoveContentBlock?pageId=@Model.Parent.Id&id=@Model.Id`, function(data) {
+                                            location.reload();
+                                        });
+                                },
+                            }
+                        },
+                        'separator', 'separator',
+                        'undo', 'redo', 'separator',
+                        {
+                            name: 'size',
+                            acceptedValues: ['8pt', '10pt', '12pt', '14pt', '18pt', '24pt', '36pt'],
+                        },
+                        {
+                            name: 'font',
+                            acceptedValues: ['Helvetica Neue', 'Arial', 'Courier New', 'Georgia', 'Impact', 'Lucida Console', 'Tahoma', 'Times New Roman', 'Verdana'],
+                        },
+                        'separator', 'bold', 'italic', 'strike', 'underline', 'separator',
+                        'alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'separator',
+                        'orderedList', 'bulletList', 'separator',
+                        'separator',
+                        {
+                            name: 'header',
+                            acceptedValues: [false, 1, 2, 3, 4, 5],
+                        }, 'separator',
+                        'color', 'background', 'separator',
+                        'link', 'image', 'separator',
+                        'clear', 'codeBlock', 'blockquote', 'separator',
+                        'insertTable', 'deleteTable',
+                        'insertRowAbove', 'insertRowBelow', 'deleteRow',
+                        'insertColumnLeft', 'insertColumnRight', 'deleteColumn',
+                    ], multiline: true,
+                },
+                onValueChanged(e) {
+                    $('#@Model.Id\_ContentBlock_form input[name=Html]').val(e.value);
+                },
+                mediaResizing: {
+                    enabled: true,
+                },
+            }).dxHtmlEditor('instance');
+            $('<form id="@Model.Id\_ContentBlock_form" method="post" action="/Admin/EditContentBlock" class="mt-2"><input type="hidden" value="@Model.Id" name="Id" readonly="true"><input type="hidden" value="@Model?.QueueIndex" name="QueueIndex" readonly="true"><input type="hidden" value="@Model?.BlockType" name="BlockType" readonly="true"><input type="hidden" value="@Model?.Html" name="Html" readonly="true"><input type="hidden" value="@Model.ParentId" name="ParentId" readonly="true"></form>').insertAfter($('.html-editor'));
+            $('form_ContentBlock_@Model.Id input[name="Html"]').val(markup);
+        });
+    </script>
+}
+else
+{
+    @Model?.HtmlString
+}

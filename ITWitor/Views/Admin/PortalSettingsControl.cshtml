@@ -1,0 +1,16 @@
+﻿@model ITWitor.Data.Settings
+<div class="row">
+    <div class="col">
+        @using (Html.BeginForm("PortalSettings", "Admin", FormMethod.Post, new { id = Model.GetType().Name }))
+        {
+            <h3 class="text-center">Основные настройки</h3>
+            <div class="dx-checkbox" name="PortalSettings.IsOnline" box-value="@Model.PortalSettings.IsOnline.ToString().ToLower()" text="Онлайн"></div>
+            <br />
+            <br />
+            <div class="dx-checkbox" name="PortalSettings.ShowNavigation" box-value='@Model.PortalSettings.ShowNavigation.ToString().ToLower()' text="Навигация в шапке"></div>
+            <br />
+            <br />
+            <div class="dx-button" type="default" action="submit" text="Сохранить"></div>
+        }
+    </div>
+</div>

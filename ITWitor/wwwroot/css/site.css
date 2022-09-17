@@ -1,0 +1,238 @@
+:root {
+  --text-dark-color: rgb(24 32 38);
+  --text-dark-color-hover: rgb(0 0 0);
+  --text-light-color: rgb(184, 199, 206);
+  --text-light-color-hover: rgb(255 255 255);
+}
+
+/*button:hover, input[type=button]:hover, *[role=button]:hover {
+  background-color: rgba(0,0,0,.04);
+}
+*/
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  min-height: 60vh;
+  position: relative;
+}
+
+.text-content {
+  font-size: small;
+  word-break: break-word;
+  text-align: justify;
+}
+
+body.loading .loader {
+  opacity: 1;
+}
+
+body main {
+  opacity: 1;
+  transition: opacity 150ms;
+  min-height: 80vh;
+}
+
+body.loading main {
+  opacity: 0;
+}
+
+body .loader {
+  position: absolute;
+  top: 2px;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 150ms;
+  opacity: 0;
+}
+
+.user-panel {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.admin-panel, .user-panel {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .admin-panel > * {
+    margin-left: .25rem;
+    margin-right: .25rem;
+  }
+
+  .user-panel * {
+    font-size: 1.5rem;
+  }
+
+
+i.dark:not(.nohover), a.dark:not(.nohover) {
+  cursor: pointer;
+  color: var(--text-dark-color);
+}
+
+  i.dark:not(.nohover):hover, a.dark:not(.nohover):hover {
+    color: var(--text-dark-color-hover);
+  }
+
+i.light:not(.nohover), a.light:not(.nohover) {
+  cursor: pointer;
+  color: var(--text-light-color);
+}
+
+  i.light:not(.nohover):hover, a.light:not(.nohover):hover {
+    color: var(--text-light-color-hover);
+  }
+
+*.hovered {
+  cursor: pointer;
+  transition: transform 100ms;
+}
+
+  *.hovered:hover {
+    transform: scale(1.05);
+  }
+
+.messages-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  text-align: center;
+  height: 0;
+  left: 0;
+  font-size: larger;
+  z-index: 10000;
+}
+
+
+.alert .close {
+  color: var(--text-light-color);
+  background-color: transparent;
+  border: none;
+  top: 0;
+  position: absolute;
+  right: 0;
+}
+
+  .alert .close:hover {
+    color: var(--text-light-color-hover);
+  }
+
+.alert-main {
+  background-color: #001132;
+  box-shadow: 0 10px 20px 0 rgb(0 0 0 / 70%);
+  border-radius: 5px;
+  border: 1px solid rgb(48, 64, 77);
+}
+
+.alert.alert-green {
+  background-color: #001132;
+  border: 2px solid green;
+}
+
+.alert.alert-yellow {
+  background-color: #001132;
+  border: 2px solid yellow;
+}
+
+.alert.alert-red {
+  background-color: #001132;
+  border: 2px solid red;
+}
+
+.alert {
+  margin-top: 0.3em;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-light-color);
+}
+
+
+.hidden-form-wrapper {
+  display: none;
+}
+
+
+.side-toggler i:hover, .toTop-toggler i:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 992px) {
+  .side-toggler {
+    display: block !important;
+  }
+
+  .side-catalog .nav-icons {
+    display: flex !important;
+    justify-content: space-around;
+  }
+}
+
+.side-toggler {
+  position: fixed;
+  top: 45vh;
+  z-index: 10;
+  /*display: none;*/
+  left: -2.5em;
+  transition: left 200ms ease 0s;
+}
+
+  .side-toggler > button {
+    -moz-transform: rotate(90deg) !important;
+    -ms-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    color: rgb(184, 199, 206);
+    font-weight: 700;
+    border: 1px solid rgb(48, 64, 77) !important;
+    margin: 0;
+    line-height: 0;
+    box-shadow: 3px 0px 7px 3px rgb(0 0 0 / 70%) !important;
+    letter-spacing: 3px;
+    /*  border-top-left-radius: 10px !important;*/
+    padding: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .side-toggler .btn:hover {
+    background-color: rgba(51, 51, 51, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .side-toggler .btn:active {
+    -moz-transform: rotate(90deg) !important;
+    -ms-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    box-shadow: 3px 0px 7px 3px rgb(0 0 0 / 70%) !important;
+  }
+
+  .side-toggler i:hover, .toTop-toggler i:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+.dx-drawer-shrink .dx-drawer-panel-content {
+  height: initial !important;
+  z-index: 20;
+}
+
+.dx-drawer-wrapper {
+  min-height: 92vh;
+}

@@ -1,0 +1,132 @@
+﻿@model IList<StaticFile>
+
+<div class="row">
+    <div class="col">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row" style="align-items: center;">
+    @{
+        if (ViewBag.PagesLinks != null)
+        {
+            <div class="col-12 top-links-wrapper my-2">
+                <ul class="d-flex flex-wrap w-100 pages-links m-0">
+                    @{
+                        int index = 1;
+                        string orderByDirection = ((string)ViewBag.PagesLinks.OrderBy.ToString()).ToLower();
+                        do
+                        {
+                            string className = index == (int)ViewBag.PagesLinks.Current ? "class=active" : "";
+                            <li @className>
+                                <a class="py-2 px-3" href="FilesControl?p=@index&c=40&od=@orderByDirection">@index</a>
+                            </li>
+                            index++;
+                        } while (index <= (int)ViewBag.PagesLinks.Count);
+                        <li>
+                            <a class="py-2 px-3" href="FilesControl?p=1&c=0&od=@orderByDirection">все</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    }
+</div>
+<div id="files_orderBy_control" class="row">
+    <div class="col-2 col-sm-2 d-flex" style="align-items:center">
+        <form id="file_upload_form" method="post" enctype="multipart/form-data" action="/Admin/UploadFile" class="mx-2 d-inline-block">
+            <input multiple type="file" name="uploads" hidden />
+            <input type="submit" hidden />
+            <i class="fa fa-plus fa-2x hovered" data-bs-original-title="Загрузить файлы" data-toggle="tooltip"></i>
+        </form>
+    </div>
+
+
+    <div class="col-sm-6 col-6  mx-auto">
+    </div>
+    <div class="col-4 col-sm-4 col-md-3" style="text-align:end">
+        <label class="d-block m-0">показано: @Model?.Count</label>
+        <label class="d-block m-0">всего: @ViewData["Count"]</label>
+    </div>
+</div>
+
+<div class="row py-1">
+    <div class="col-lg-12 mx-auto">
+        <div class="card rounded border overflow-hidden">
+            <div class="card-body p-1 rounded">
+                <div class="table-responsive">
+                    <table id="files" class="table table-striped table-bordered w-100">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="text-center">Имя</th>
+                                <th class="text-center">Тип</th>
+                                <th class="text-center">URL</th>
+                                <th class="text-center">
+                                    <i class="fas fa-trash hovered" data-bs-original-title="Удалить отмеченные файлы" data-toggle="tooltip"></i>
+                                </th>
+                                <th class="text-center">
+                                    <input type="checkbox" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                                foreach (StaticFile? file in Model!)
+                                {
+                                    if (file.FileType == null) continue;
+
+                                    <tr data-id="@file.Id">
+                                        @if (file.FileType!.Contains("image"))
+                                        {
+                                            <th class="text-center">
+                                                <a data-toggle="tooltip" title="<img src='@file.Path'/>" class="fancybox nobg" href="@file.Path">
+                                                    <i class="fa fa-eye fa-md text-dark hovered"></i>
+                                                </a>
+                                            </th>
+                                        }
+                                        else if (file.FileType.Contains("video"))
+                                        {
+                                            <th class="text-center">
+                                                <a class="fancybox nobg" href="@file.Path">
+                                                    <i data-toggle="tooltip" data-bs-original-title="Просмотр" class="fa fa-eye fa-md text-dark hovered"></i>
+                                                </a>
+                                            </th>
+                                        }
+                                        else
+                                        {
+                                            <th></th>
+                                        }
+                                        <th>@file.OriginalName</th>
+                                        <th>@file.FileType</th>
+
+                                        @if (file.FileType.Contains("audio"))
+                                        {
+                                            <th>
+                                                <audio>
+                                                    <source src='@file.Path' type='audio/ogg; codecs=vorbis'>
+                                                    <source src='@file.Path' type='audio/mpeg'> Тег audio не поддерживается вашим браузером.
+                                                    <a href='@file.Path'>Скачать</a>
+                                                </audio>
+                                            </th>
+                                        }
+                                        else
+                                        {
+                                            <th>
+                                                <i data-toggle="tooltip" data-bs-original-title="Скопировать ссылку в буфер" class="fa fa-copy hovered"></i>
+                                                <a target="_blank" href="@file.Path">@file.Path</a>
+                                                <input type="text" readonly value="@file.Path" style="position: absolute; opacity: 0;pointer-events:none" />
+                                            </th>
+                                        }
+                                        <th class="text-center"><i class="fas fa-trash hovered" data-bs-original-title="Удалить файл" data-toggle="tooltip"></i></th>
+                                        <th class="text-center"><input type="checkbox" /></th>
+                                    </tr>
+                                }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
