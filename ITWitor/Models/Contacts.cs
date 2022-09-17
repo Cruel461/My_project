@@ -17,16 +17,6 @@ namespace ITWitor.Models
 
     }
 
-    public class BranchContacts : Contacts
-    {
-        [JsonIgnore]
-        public Branch? Branch { get; set; }
-
-        [ForeignKey("Branch")]
-        public int? ParentId { get; set; }
-
-    }
-
     public class Contacts : BaseModel
     {
         [DisplayName("Основной телефон")]
